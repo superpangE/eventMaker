@@ -1,0 +1,56 @@
+* {
+  margin: 0;
+}
+
+/* 컬럼 */
+
+.column-container {
+  width: 350px;
+  height: 800px;
+  background-color: #f6f8fa;
+  border: 1px solid #d1d5da80;
+  border-radius: 10px;
+}
+
+.column-container-selected {
+  border: 1px solid #3d8ad8;
+  box-shadow: 1.5px 1.5px 1.5px 1.5px rgb(171, 196, 221);
+}
+
+.column-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 30px;
+  padding: 10px;
+}
+
+.column-header-wrap {
+  display: flex;
+}
+
+.column-header-title {
+  font-weight: 600;
+  margin-left: 5px;
+}
+
+.column-header-counter {
+  width: 20px;
+  border-radius: 15px;
+  background-color: #d1d5da80;
+  color: #6a737d;
+  text-align: center;
+}
+
+#plus-btn,
+#minus-btn {
+  color: #6a737d;
+  margin-right: 5px;
+}
+
+#plus-btn:hover,
+#minus-btn:hover {
+  color: #3d8ad8;
+  transition: 0.8s;
+  cursor: pointer;
+}
