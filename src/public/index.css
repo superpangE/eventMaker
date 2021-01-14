@@ -6,10 +6,13 @@
 
 .column-container {
   width: 350px;
+  min-width: 350px;
   height: 800px;
+  min-height: 800px;
   background-color: #f6f8fa;
   border: 1px solid #d1d5da80;
   border-radius: 10px;
+  margin-right: 10px;
 }
 
 .column-container-selected {
@@ -42,6 +45,12 @@
   text-align: center;
 }
 
+.column-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 #plus-btn,
 #minus-btn {
   color: #6a737d;
@@ -53,4 +62,103 @@
   color: #3d8ad8;
   transition: 0.8s;
   cursor: pointer;
+}
+
+/* 카드 */
+.card-container {
+  background-color: white;
+  width: 300px;
+  min-width: 300px;
+  height: 100px;
+  min-height: 100px;
+  border: 1px solid #d1d5da80;
+  border-radius: 10px;
+  padding: 5px 10px;
+  margin: 5px;
+}
+.card-header {
+  font-weight: 600;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
+  margin-top: 10px;
+}
+#card-icon {
+  color: green;
+  margin-left: 5px;
+  margin-top: 4px;
+}
+.card-title {
+  margin-left: 5px;
+  color: rgb(38, 107, 255);
+}
+.card-title-wrap {
+  display: flex;
+  height: 45px;
+}
+.card-title-wrap:hover {
+  cursor: pointer;
+  text-decoration: underline;
+  text-decoration-color: rgb(38, 107, 255);
+}
+.progress-wrap {
+  font-size: small;
+  display: flex;
+  margin-left: 27px;
+  margin-bottom: 5px;
+  color: #6f73798a;
+}
+#progress-icon {
+  margin-top: 3px;
+  margin-right: 4px;
+}
+.card-author {
+  font-size: small;
+  margin-left: 27px;
+  margin-bottom: 5px;
+  color: #6f73798a;
+}
+.card-tag {
+  font-style: normal;
+  margin-left: 20px;
+  color: white;
+  background-color: rgb(136, 20, 39);
+  border-radius: 10px;
+  padding: 2px 6px;
+}
+#delete-card {
+  margin-right: 5px;
+  margin-top: 4px;
+}
+#delete-card:hover {
+  color: rgb(38, 107, 255);
+  transition: 0.8s;
+  cursor: pointer;
+}
+
+/* 칼럼 추가 */
+.add-container {
+  width: 300px;
+  min-width: 300px;
+  height: 100px;
+  min-height: 100px;
+  border: 1px dashed #929292;
+  border-radius: 10px;
+  color: #686868;
+  line-height: 100px;
+  text-align: center;
+  font-weight: 800;
+}
+
+.add-container:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+/* 메인 */
+
+.main-container {
+  margin-top: 20px;
+  margin-left: 20px;
+  display: flex;
 }
