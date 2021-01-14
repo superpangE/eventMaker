@@ -16,10 +16,22 @@ router.get('/findAll', (req, res) => {
   });
 });
 
+router.get('/counter', (req, res) => {
+  const sql = 'SELECT COUNT(*) as NUM FROM eventmaker.Column';
+  connection.query(sql, (error, rows) => {
+    if (error) {
+      console.log('DB 접근 실패!');
+      throw error;
+    }
+    res.status(200).json(rows[0].NUM);
+  });
+});
+
 router.post('/add', (req, res) => {
   const { title, pos } = req.body;
   const params = [title, pos];
   const sql = 'INSERT INTO eventmaker.Column(title, pos) VALUES(?, ?)';
+
   connection.query(sql, params, (err, rows) => {
     if (err) console.log(err);
     res.json({

@@ -1,18 +1,5 @@
-const getContainer = (id, className, text) => {
-  const container = document.createElement('div');
-  if (className !== null) container.className = className;
-  if (id !== null) container.id = id;
-  if (text !== null) container.textContent = text;
-  return container;
-};
-
-const getBtn = (id, className, text) => {
-  const container = document.createElement('i');
-  if (id !== null) container.id = id;
-  if (className !== null) container.className = className;
-  if (text !== null) container.textContent = text;
-  return container;
-};
+import { getContainer, getBtn } from '../common.js';
+import Card from '../Card/index.js';
 
 const Column = () => {
   // const onClick = (e) => {
@@ -42,6 +29,9 @@ const Column = () => {
 
   ColumnHeader.insertAdjacentElement('beforeend', ColumnHeaderWrap);
   ColumnHeader.insertAdjacentElement('beforeend', ColumnMaker);
+
+  ColumnBody.insertAdjacentElement('beforeend', Card());
+  ColumnBody.insertAdjacentElement('beforeend', Card());
 
   ColumnContainer.insertAdjacentElement('beforeend', ColumnHeader);
   ColumnContainer.insertAdjacentElement('beforeend', ColumnBody);
