@@ -1,9 +1,63 @@
 * {
   margin: 0;
 }
-
+/* 헤더 */
+.header-wrap {
+  display: flex;
+  background-color: #24292e;
+  color: #fff;
+  height: 63px;
+  justify-content: space-between;
+}
+.left-header {
+  display: flex;
+  align-items: center;
+  margin-left: 35px;
+}
+#header-icon {
+  height: 33px;
+  width: 33px;
+}
+#header-icon:hover {
+  cursor: pointer;
+  color: #c2c4c5;
+}
+.find-box {
+  background-color: #24292e;
+  margin-left: 15px;
+  border: 1px solid #d1d5da80;
+  height: 25px;
+  width: 180px;
+  border-radius: 5px;
+  padding-left: 10px;
+}
+.menu-bar {
+  margin-left: 20px;
+  font-weight: 500;
+  font-size: smaller;
+}
+.menu-bar:hover {
+  cursor: pointer;
+  color: #c2c4c5;
+}
+.right-header {
+  display: flex;
+  align-items: center;
+  margin-right: 25px;
+}
+#header-info {
+  margin-right: 25px;
+}
+#header-alarm {
+  margin-right: 25px;
+}
+#header-info:hover,
+#header-alarm:hover,
+#header-user:hover {
+  cursor: pointer;
+  color: #c2c4c5;
+}
 /* 컬럼 */
-
 .column-container {
   width: 350px;
   min-width: 350px;
@@ -157,7 +211,7 @@
 
 /* 메인 */
 
-.main-container {
+.body-container {
   margin-top: 20px;
   margin-left: 20px;
   display: flex;
