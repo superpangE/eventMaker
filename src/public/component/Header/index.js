@@ -15,6 +15,9 @@ const Header = () => {
   const HeaderInfo = getBtn('header-info', 'fas fa-plus', null);
   const HeaderUser = getBtn('header-user', 'far fa-id-badge', null);
 
+  const Hamburger = getBtn('hamburger-btn', 'fas fa-bars', null);
+
+  LeftHeader.insertAdjacentElement('beforeend', Hamburger);
   LeftHeader.insertAdjacentElement('beforeend', HeaderIcon);
   LeftHeader.insertAdjacentElement('beforeend', FindBox);
   LeftHeader.insertAdjacentElement('beforeend', Menu1);
@@ -27,6 +30,7 @@ const Header = () => {
   RightHeader.insertAdjacentElement('beforeend', HeaderUser);
 
   HeaderWrap.insertAdjacentElement('beforeend', LeftHeader);
+
   HeaderWrap.insertAdjacentElement('beforeend', RightHeader);
 
   return HeaderWrap;
