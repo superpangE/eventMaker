@@ -2,7 +2,7 @@
   margin: 0;
 }
 /* 헤더 */
-@media (min-width: 720px) {
+@media (min-width: 770px) {
   .header-wrap {
     display: flex;
     background-color: #24292e;
@@ -31,6 +31,12 @@
     width: 180px;
     border-radius: 5px;
     padding-left: 10px;
+    transition: 0.7s;
+  }
+  .find-box:focus {
+    background-color: white;
+    width: 240px;
+    transition: 0.7s;
   }
   .menu-bar {
     margin-left: 20px;
@@ -62,7 +68,7 @@
     display: none;
   }
 }
-@media (max-width: 720px) {
+@media (max-width: 770px) {
   .header-wrap {
     display: flex;
     background-color: #24292e;
