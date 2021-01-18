@@ -1,7 +1,7 @@
 import { getContainer, getBtn } from '../common.js';
 import Card from '../Card/index.js';
 
-const Column = () => {
+const Column = (title) => {
   // const onClick = (e) => {
   //   const target = e.target.closest('.column-container');
   //   target.classList.add('column-container-selected');
@@ -12,7 +12,7 @@ const Column = () => {
   const ColumnHeader = getContainer(null, 'column-header', null);
 
   const ColumnHeaderWrap = getContainer(null, 'column-header-wrap', null);
-  const ColumnHeaderTitle = getContainer(null, 'column-header-title', 'To Do');
+  const ColumnHeaderTitle = getContainer(null, 'column-header-title', title);
   const ColumnHeaderCounter = getContainer(null, 'column-header-counter', '0');
 
   const ColumnMaker = getContainer(null, 'column-maker', null);

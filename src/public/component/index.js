@@ -1,42 +1,47 @@
-import Column from './Column/index.js';
 import AddColumn from './AddColumn/index.js';
 import Header from './Header/index.js';
+import Modal from './Modal/index.js';
 import { getContainer } from './common.js';
 
-const AddColumnOnClickEvent = (MainContainer, AddColumnEle) => {
-  const AddColumnOnClick = async () => {
-    const NewColumn = Column();
-    MainContainer.insertAdjacentElement('afterbegin', NewColumn);
+const show = () => {
+  document.getElementById('modal-content').style.display = 'block';
+  document.getElementById('background-color').style.display = 'block';
+  document.getElementById('modal-input').focus();
+};
 
-    const response = await fetch('http://localhost:3000/column/counter', {
-      method: 'get',
-    });
-    const columnNum = await response.json();
-    await fetch('http://localhost:3000/column/add', {
-      method: 'post',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        title: 'To Do',
-        pos: columnNum + 1,
-      }),
-    });
+const hidden = () => {
+  document.getElementById('modal-content').style.display = 'none';
+  document.getElementById('background-color').style.display = 'none';
+};
+
+const AddColumnOnClickEvent = (AddColumnEle) => {
+  const AddColumnOnClick = () => {
+    const BG = document.getElementById('background-color');
+    BG.addEventListener('click', hidden);
+    show();
   };
   AddColumnEle.addEventListener('click', AddColumnOnClick);
 };
 
 const Main = () => {
   const MainContainer = getContainer(null, 'main-container', null);
+  const BodyWrap = getContainer(null, 'body-wrap', null);
+  const AddWrap = getContainer(null, 'add-wrap', null);
   const BodyContainer = getContainer(null, 'body-container', null);
+
   const AddColumnEle = AddColumn();
 
-  AddColumnOnClickEvent(BodyContainer, AddColumnEle);
+  AddColumnOnClickEvent(AddColumnEle);
 
-  BodyContainer.insertAdjacentElement('beforeend', AddColumnEle);
+  AddWrap.insertAdjacentElement('beforeend', AddColumnEle);
+
+  BodyContainer.insertAdjacentElement('beforeend', BodyWrap);
+  BodyContainer.insertAdjacentElement('beforeend', AddWrap);
   MainContainer.insertAdjacentElement('beforeend', Header());
   MainContainer.insertAdjacentElement('beforeend', BodyContainer);
+  MainContainer.insertAdjacentElement('beforeend', Modal(BodyWrap));
 
   return MainContainer;
 };
+
 export default Main;
