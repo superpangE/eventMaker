@@ -1,4 +1,32 @@
 import { getContainer, getBtn, getInput } from '../common.js';
+
+const addMouseOver = (LeftHeader) => {
+  const mouseOverEvent = (e) => {
+    const target = e.target.closest('#hamburger-btn');
+    const ele = document.querySelector('#hamburger-btn');
+    if (target) {
+      if (ele.classList.contains('fa-bars')) {
+        ele.classList.remove('fa-bars');
+        ele.classList.add('fa-coffee');
+      }
+    } else {
+      if (ele.classList.contains('fa-coffee')) {
+        ele.classList.remove('fa-coffee');
+        ele.classList.add('fa-bars');
+      }
+    }
+  };
+  const mouseOutEvent = () => {
+    const ele = document.querySelector('#hamburger-btn');
+    if (ele.classList.contains('fa-coffee')) {
+      ele.classList.remove('fa-coffee');
+      ele.classList.add('fa-bars');
+    }
+  };
+  LeftHeader.addEventListener('mouseover', mouseOverEvent);
+  LeftHeader.addEventListener('mouseout', mouseOutEvent);
+};
+
 const Header = () => {
   //   const MainContainer = getContainer(null, 'main-container', null);
 
@@ -16,6 +44,8 @@ const Header = () => {
   const HeaderUser = getBtn('header-user', 'far fa-id-badge', null);
 
   const Hamburger = getBtn('hamburger-btn', 'fas fa-bars', null);
+
+  addMouseOver(LeftHeader);
 
   LeftHeader.insertAdjacentElement('beforeend', Hamburger);
   LeftHeader.insertAdjacentElement('beforeend', HeaderIcon);
