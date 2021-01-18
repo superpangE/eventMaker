@@ -14,4 +14,14 @@ const getBtn = (id, className, text) => {
   return container;
 };
 
-export { getContainer, getBtn };
+const getInput = (id, className, type, placeholder) => {
+  const container = document.createElement('input');
+  if (id != null) container.id = id;
+  if (className != null) container.className = className;
+  if (type != null) container.type = type;
+  if (placeholder != null) container.placeholder = placeholder;
+
+  return container;
+};
+
+export { getContainer, getBtn, getInput };
