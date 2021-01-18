@@ -14,12 +14,13 @@ const getBtn = (id, className, text) => {
   return container;
 };
 
-const getInput = (id, className, type, placeholder) => {
+const getInput = (id, className, type, placeholder, auto) => {
   const container = document.createElement('input');
   if (id != null) container.id = id;
   if (className != null) container.className = className;
   if (type != null) container.type = type;
   if (placeholder != null) container.placeholder = placeholder;
+  if (auto != null) container.autocomplete = auto;
 
   return container;
 };
