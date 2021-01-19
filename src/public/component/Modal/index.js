@@ -20,7 +20,7 @@ const hidden = () => {
 const BtnOnClickEvent = (MainContainer, AccessBtn, InputBox) => {
   const BtnOnClick = async () => {
     const TextValue = InputBox.value;
-
+    InputBox.value = '';
     if (TextValue !== '') {
       const NewColumn = Column(TextValue);
       MainContainer.insertAdjacentElement('beforeEnd', NewColumn);
@@ -39,7 +39,6 @@ const BtnOnClickEvent = (MainContainer, AccessBtn, InputBox) => {
           pos: columnNum + 1,
         }),
       });
-      InputBox.value = '';
     } else {
       alert('no');
     }
