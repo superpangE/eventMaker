@@ -266,9 +266,22 @@
   font-weight: 800;
 }
 
+@keyframes motion {
+  0% {
+  }
+  100% {
+    /* color: red; */
+    font-size: large;
+  }
+}
+
 .add-container:hover {
   cursor: pointer;
-  text-decoration: underline;
+  color: #000000;
+  animation: motion 0.3s;
+  animation-fill-mode: forwards;
+  transition: 1s;
+  text-decoration: none;
 }
 .add-wrap {
   text-align: center;
