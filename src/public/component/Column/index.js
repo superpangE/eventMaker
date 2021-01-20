@@ -1,5 +1,13 @@
 import { getContainer, getBtn } from '../common.js';
-import Card from '../Card/index.js';
+// import Card from '../Card/index.js';
+import AddCard from '../AddCard/index.js';
+
+const AddCardOnClickEvent = (MakeCardWrap, ColumnBody) => {
+  const AddCardOnClick = () => {
+    ColumnBody.insertAdjacentElement('afterbegin', AddCard());
+  };
+  MakeCardWrap.addEventListener('click', AddCardOnClick);
+};
 
 const Column = (title) => {
   // const onClick = (e) => {
@@ -20,9 +28,16 @@ const Column = (title) => {
 
   const MakeColumn = getBtn('plus-btn', 'fas fa-plus', null);
   const DeleteColumn = getBtn('minus-btn', 'fas fa-minus', null);
+  const MakeCardWrap = getContainer(null, 'makecard-wrap', null);
+  const DeleteCardWrap = getContainer(null, 'deletecard-wrap', null);
 
-  ColumnMaker.insertAdjacentElement('beforeend', MakeColumn);
-  ColumnMaker.insertAdjacentElement('beforeend', DeleteColumn);
+  MakeCardWrap.insertAdjacentElement('beforeend', MakeColumn);
+  DeleteCardWrap.insertAdjacentElement('beforeend', DeleteColumn);
+
+  ColumnMaker.insertAdjacentElement('beforeend', MakeCardWrap);
+  ColumnMaker.insertAdjacentElement('beforeend', DeleteCardWrap);
+
+  // MakeColumn.addEventListener('click', AddCardOnClickEvent(ColumnBody));
 
   ColumnHeaderWrap.insertAdjacentElement('beforeend', ColumnHeaderCounter);
   ColumnHeaderWrap.insertAdjacentElement('beforeend', ColumnHeaderTitle);
@@ -30,8 +45,10 @@ const Column = (title) => {
   ColumnHeader.insertAdjacentElement('beforeend', ColumnHeaderWrap);
   ColumnHeader.insertAdjacentElement('beforeend', ColumnMaker);
 
-  ColumnBody.insertAdjacentElement('beforeend', Card());
-  ColumnBody.insertAdjacentElement('beforeend', Card());
+  AddCardOnClickEvent(MakeCardWrap, ColumnBody);
+
+  // ColumnBody.insertAdjacentElement('beforeend', AddCard());
+  // ColumnBody.insertAdjacentElement('beforeend', Card());
 
   ColumnContainer.insertAdjacentElement('beforeend', ColumnHeader);
   ColumnContainer.insertAdjacentElement('beforeend', ColumnBody);

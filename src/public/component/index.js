@@ -57,6 +57,7 @@ const Main = () => {
   MainContainer.insertAdjacentElement('beforeend', Header());
   MainContainer.insertAdjacentElement('beforeend', BodyContainer);
   MainContainer.insertAdjacentElement('beforeend', Modal(BodyWrap));
+  // MainContainer.insertAdjacentElement('beforeend', AddCard());
 
   return MainContainer;
 };
