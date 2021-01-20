@@ -2,14 +2,25 @@ import { getContainer, getInput, getBtn } from '../common.js';
 import Column from '../Column/index.js';
 
 const hidden = () => {
-  document.getElementById('modal-content').style.display = 'none';
-  document.getElementById('background-color').style.display = 'none';
+  const Modal = document.getElementById('modal-content');
+  const Bg = document.getElementById('background-color');
+  Modal.classList.add('modal-fade-out');
+  Modal.classList.remove('modal-fade-in');
+  Bg.classList.add('fade-out');
+  Bg.classList.remove('fade-in');
+
+  setTimeout(function () {
+    Modal.classList.remove('modal-fade-out');
+    Modal.classList.add('fade');
+    Bg.classList.add('fade');
+    Bg.classList.remove('fade-out');
+  }, 700);
 };
 
 const BtnOnClickEvent = (MainContainer, AccessBtn, InputBox) => {
   const BtnOnClick = async () => {
     const TextValue = InputBox.value;
-
+    InputBox.value = '';
     if (TextValue !== '') {
       const NewColumn = Column(TextValue);
       MainContainer.insertAdjacentElement('beforeEnd', NewColumn);
@@ -28,7 +39,6 @@ const BtnOnClickEvent = (MainContainer, AccessBtn, InputBox) => {
           pos: columnNum + 1,
         }),
       });
-      InputBox.value = '';
     } else {
       alert('no');
     }
