@@ -1,44 +1,21 @@
 import { getContainer, getInput, getBtn } from '../common.js';
 import Column from '../Column/index.js';
-
-const hidden = () => {
-  const Modal = document.getElementById('modal-content');
-  const Bg = document.getElementById('background-color');
-  Modal.classList.add('modal-fade-out');
-  Modal.classList.remove('modal-fade-in');
-  Bg.classList.add('fade-out');
-  Bg.classList.remove('fade-in');
-
-  setTimeout(function () {
-    Modal.classList.remove('modal-fade-out');
-    Modal.classList.add('fade');
-    Bg.classList.add('fade');
-    Bg.classList.remove('fade-out');
-  }, 700);
-};
+import API from '../../lib/api.js';
+import { hidden } from '../../lib/modalTrigger.js';
 
 const BtnOnClickEvent = (MainContainer, AccessBtn, InputBox) => {
   const BtnOnClick = async () => {
     const TextValue = InputBox.value;
     InputBox.value = '';
     if (TextValue !== '') {
-      const NewColumn = Column(TextValue);
-      MainContainer.insertAdjacentElement('beforeEnd', NewColumn);
       hidden();
-      const response = await fetch('http://localhost:3000/column/counter', {
-        method: 'get',
+      const columnNum = await API.get('/column/counter');
+      const Result = await API.post('/column/add', {
+        title: TextValue,
+        pos: columnNum + 1,
       });
-      const columnNum = await response.json();
-      await fetch('http://localhost:3000/column/add', {
-        method: 'post',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          title: TextValue,
-          pos: columnNum + 1,
-        }),
-      });
+      const NewColumn = Column(TextValue, Result.columnId);
+      MainContainer.insertAdjacentElement('beforeend', NewColumn);
     } else {
       alert('no');
     }
