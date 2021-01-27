@@ -1,35 +1,11 @@
 import AddColumn from './AddColumn/index.js';
 import Header from './Header/index.js';
 import Modal from './Modal/index.js';
+import Column from './Column/index.js';
+import Card from './Card/index.js';
 import { getContainer } from './common.js';
-
-const show = () => {
-  const Modal = document.getElementById('modal-content');
-  const Bg = document.getElementById('background-color');
-  Modal.classList.add('modal-fade-in');
-  Modal.classList.remove('fade');
-  Modal.classList.remove('modal-fade-out');
-  Bg.classList.add('fade-in');
-  Bg.classList.remove('fade-out');
-  Bg.classList.remove('fade');
-  document.getElementById('modal-input').focus();
-};
-
-const hidden = () => {
-  const Modal = document.getElementById('modal-content');
-  const Bg = document.getElementById('background-color');
-  Modal.classList.add('modal-fade-out');
-  Modal.classList.remove('modal-fade-in');
-  Bg.classList.add('fade-out');
-  Bg.classList.remove('fade-in');
-
-  setTimeout(function () {
-    Modal.classList.remove('modal-fade-out');
-    Modal.classList.add('fade');
-    Bg.classList.add('fade');
-    Bg.classList.remove('fade-out');
-  }, 700);
-};
+import { show, hidden } from '../lib/modalTrigger.js';
+import { getCardDatas, getColumnDatas } from '../lib/getDatas.js';
 
 const AddColumnOnClickEvent = (AddColumnEle) => {
   const AddColumnOnClick = () => {
@@ -38,6 +14,26 @@ const AddColumnOnClickEvent = (AddColumnEle) => {
     show();
   };
   AddColumnEle.addEventListener('click', AddColumnOnClick);
+};
+
+const initializeDatas = async (BodyWrap) => {
+  const columnDatas = await getColumnDatas();
+  columnDatas
+    .sort((a, b) => {
+      return a.pos < b.pos ? -1 : 0;
+    })
+    .forEach(async (element) => {
+      const newColumn = Column(element.title, element.column_id);
+      const columnBody = newColumn.lastChild;
+      const cardDatas = await getCardDatas();
+      cardDatas
+        .filter((card) => element.column_id === card.column_id)
+        .forEach((element2) => {
+          const newCard = Card(element2.title, element2.card_id);
+          columnBody.insertAdjacentElement('beforeend', newCard);
+        });
+      BodyWrap.insertAdjacentElement('beforeend', newColumn);
+    });
 };
 
 const Main = () => {
@@ -51,6 +47,9 @@ const Main = () => {
   AddColumnOnClickEvent(AddColumnEle);
 
   AddWrap.insertAdjacentElement('beforeend', AddColumnEle);
+  initializeDatas(BodyWrap);
+  // BodyWrap 컬럼을 넣는다.
+  // 컬럼에 카드를 넣는다.
 
   BodyContainer.insertAdjacentElement('beforeend', BodyWrap);
   BodyContainer.insertAdjacentElement('beforeend', AddWrap);

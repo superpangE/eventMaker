@@ -2,14 +2,32 @@ import { getContainer, getBtn } from '../common.js';
 // import Card from '../Card/index.js';
 import AddCard from '../AddCard/index.js';
 
-const AddCardOnClickEvent = (MakeCardWrap, ColumnBody) => {
+const AddCardOnClickEvent = (MakeCardWrap, ColumnBody, columnId) => {
   const AddCardOnClick = () => {
-    ColumnBody.insertAdjacentElement('afterbegin', AddCard());
+    if (!ColumnBody.firstChild || !ColumnBody.firstChild.classList.contains('addcard-container')) {
+      ColumnBody.insertAdjacentElement('afterbegin', AddCard(ColumnBody, columnId));
+    }
   };
   MakeCardWrap.addEventListener('click', AddCardOnClick);
 };
 
-const Column = (title) => {
+const DeleteColumnClickEvent = (DeleteCardWrap, ColumnContainer, columnId) => {
+  const DeleteColumnClick = async () => {
+    ColumnContainer.remove();
+    await fetch('http://localhost:3000/column/delete', {
+      method: 'post',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        columnId: columnId,
+      }),
+    });
+  };
+  DeleteCardWrap.addEventListener('click', DeleteColumnClick);
+};
+
+const Column = (title, columnId) => {
   // const onClick = (e) => {
   //   const target = e.target.closest('.column-container');
   //   target.classList.add('column-container-selected');
@@ -45,8 +63,10 @@ const Column = (title) => {
   ColumnHeader.insertAdjacentElement('beforeend', ColumnHeaderWrap);
   ColumnHeader.insertAdjacentElement('beforeend', ColumnMaker);
 
-  AddCardOnClickEvent(MakeCardWrap, ColumnBody);
-
+  AddCardOnClickEvent(MakeCardWrap, ColumnBody, columnId);
+  DeleteColumnClickEvent(DeleteCardWrap, ColumnContainer, columnId);
+  // AddCard(ColumnBody);
+  // ColumnBody.insertAdjacentElement('beforeend', AddCard(ColumnBody));
   // ColumnBody.insertAdjacentElement('beforeend', AddCard());
   // ColumnBody.insertAdjacentElement('beforeend', Card());
 

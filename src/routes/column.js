@@ -35,7 +35,7 @@ router.post('/add', (req, res) => {
   connection.query(sql, params, (err, rows) => {
     if (err) console.log(err);
     res.json({
-      rows,
+      columnId: rows.insertId,
     });
   });
 });
