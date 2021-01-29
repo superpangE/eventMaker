@@ -3,14 +3,14 @@ import { getContainer, getBtn } from '../common.js';
 const DeleteCardClickEvent = (DeleteCardContainer, CardContainer, cardId) => {
   const DeleteCardClick = async () => {
     CardContainer.remove();
-    // console.log(cardId.cardId);
+    // console.log(cardId);
     await fetch('http://localhost:3000/card/delete', {
       method: 'post',
       headers: {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        cardId: cardId.cardId,
+        cardId: cardId,
       }),
     });
   };

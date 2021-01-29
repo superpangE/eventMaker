@@ -14,7 +14,7 @@ const BtnOnClickEvent = (MainContainer, AccessBtn, InputBox) => {
         title: TextValue,
         pos: columnNum + 1,
       });
-      const NewColumn = Column(TextValue, Result.columnId);
+      const NewColumn = Column(TextValue, Result.columnId, 0);
       MainContainer.insertAdjacentElement('beforeend', NewColumn);
     } else {
       alert('no');
