@@ -26,8 +26,10 @@ const AcceptBtnOnClickEvent = (
       const NewCard = Card(TitleValue, Result);
       ColumnBody.insertAdjacentElement('beforeend', NewCard);
       ColumnBody.removeChild(ColumnBody.firstChild);
-      cardCnt.innerHTML = Number(cardCnt.innerHtml) + Number(1);
-      console.log(cardCnt.innerHTML);
+      const abc = cardCnt;
+      const abc2 = document.getElementsByClassName('column-header-counter').innerText;
+      console.log(abc);
+      console.log(abc2);
     } else {
       alert('no');
     }
