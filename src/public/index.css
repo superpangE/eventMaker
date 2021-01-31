@@ -456,8 +456,51 @@
   transition: 0.7s;
   color: #797979;
 }
+/* 카드 세부 컴포넌트 */
+.detail-container {
+  position: fixed;
+  right: 0;
+  border: 1px solid;
+  width: 240px;
+  height: 100%;
+}
+.header-left {
+  display: flex;
+  margin: 10px;
+}
+#detail-icon {
+  color: rgb(7, 160, 15);
+}
+.detail-title {
+  margin-left: 5px;
+}
+#detail-close {
+  margin-right: 10px;
+  margin-top: 10px;
+  color: #6a737d;
+}
+#detail-close:hover {
+  cursor: pointer;
+  color: black;
+}
+.detail-header {
+  display: flex;
+  border-bottom: solid 1px;
+  justify-content: space-between;
+  height: 40px;
+}
+.detail-foot {
+  border: 1px solid;
+  height: 40px;
+  position: fixed;
+  bottom: 0;
+  width: 200px;
+  margin-left: 20px;
+  margin-bottom: 10px;
+  text-align: center;
+  vertical-align: middle;
+}
 /* 메인 */
-
 .body-wrap {
   margin-top: 20px;
   margin-left: 20px;
