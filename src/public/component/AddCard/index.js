@@ -23,13 +23,12 @@ const AcceptBtnOnClickEvent = (
         pos: columnId,
         content: ContentValue,
       });
-      const NewCard = Card(TitleValue, Result);
+      const cardId = Result.cardId;
+      const NewCard = Card(TitleValue, cardId, cardCnt);
       ColumnBody.insertAdjacentElement('beforeend', NewCard);
       ColumnBody.removeChild(ColumnBody.firstChild);
-      const abc = cardCnt;
-      const abc2 = document.getElementsByClassName('column-header-counter').innerText;
-      console.log(abc);
-      console.log(abc2);
+      const abc = Number(cardCnt.textContent);
+      cardCnt.textContent = abc + 1;
     } else {
       alert('no');
     }
