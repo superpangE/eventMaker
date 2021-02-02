@@ -1,23 +1,25 @@
 import { getContainer, getBtn } from '../common.js';
 
-const DeleteCardClickEvent = (DeleteCardContainer, CardContainer, cardId) => {
+const DeleteCardClickEvent = (DeleteCardContainer, CardContainer, cardId, cardCnt) => {
   const DeleteCardClick = async () => {
     CardContainer.remove();
-    // console.log(cardId.cardId);
+    const cntNum = Number(cardCnt.textContent);
+    cardCnt.textContent = cntNum - 1;
+    // console.log(cardId);
     await fetch('http://localhost:3000/card/delete', {
       method: 'post',
       headers: {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        cardId: cardId.cardId,
+        cardId: cardId,
       }),
     });
   };
   DeleteCardContainer.addEventListener('click', DeleteCardClick);
 };
 
-const Card = (TitleValue, cardId) => {
+const Card = (TitleValue, cardId, cardCnt) => {
   const CardContainer = getContainer(null, 'card-container', null);
 
   const CardHeader = getContainer(null, 'card-header', null);
@@ -33,7 +35,6 @@ const Card = (TitleValue, cardId) => {
   const ProgressBar = getContainer(null, 'progress-bar', null);
 
   const CardAuthor = getContainer(null, 'card-author', 'Created by pangE');
-  //   const CardTag = getBtn(null, 'card-tag', 'FE');
 
   CardTitleWrap.insertAdjacentElement('beforeend', CardIcon);
   CardTitleWrap.insertAdjacentElement('beforeend', CardTitle);
@@ -42,7 +43,7 @@ const Card = (TitleValue, cardId) => {
   DeleteCardContainer.insertAdjacentElement('beforeend', DeleteCard);
   CardHeader.insertAdjacentElement('beforeend', DeleteCardContainer);
 
-  DeleteCardClickEvent(DeleteCardContainer, CardContainer, cardId);
+  DeleteCardClickEvent(DeleteCardContainer, CardContainer, cardId, cardCnt);
 
   ProgressWrap.insertAdjacentElement('beforeend', ProgressIcon);
   ProgressWrap.insertAdjacentElement('beforeend', ProgressCnt);

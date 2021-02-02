@@ -6,6 +6,7 @@ create table eventmaker.Column(
     create_At DATETIME DEFAULT NOW()
 );
 
+
 -- Card 테이블
 create table eventmaker.Card(
   card_id Integer AUTO_INCREMENT not null,
@@ -16,7 +17,7 @@ create table eventmaker.Card(
   author char(30) not null,
   create_At DATETIME DEFAULT NOW(),
   PRIMARY KEY(card_id),
-  FOREIGN KEY(column_id) REFERENCES eventmaker.Column(column_id)
+  FOREIGN KEY(column_id) REFERENCES eventmaker.Column(column_id) ON UPDATE CASCADE ON DELETE CASCADE
 );
 
 -- 현재 Database들의 character 상태

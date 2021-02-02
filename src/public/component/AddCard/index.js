@@ -7,7 +7,8 @@ const AcceptBtnOnClickEvent = (
   AcceptWrap,
   AddCardTitleArea,
   AddCardContentArea,
-  columnId
+  columnId,
+  cardCnt
 ) => {
   const AcceptBtnonClick = async () => {
     const TitleValue = AddCardTitleArea.value;
@@ -22,9 +23,12 @@ const AcceptBtnOnClickEvent = (
         pos: columnId,
         content: ContentValue,
       });
-      const NewCard = Card(TitleValue, Result);
+      const cardId = Result.cardId;
+      const NewCard = Card(TitleValue, cardId, cardCnt);
       ColumnBody.insertAdjacentElement('beforeend', NewCard);
       ColumnBody.removeChild(ColumnBody.firstChild);
+      const abc = Number(cardCnt.textContent);
+      cardCnt.textContent = abc + 1;
     } else {
       alert('no');
     }
@@ -39,7 +43,7 @@ const DeleteBtnOnClickEvent = (CancelWrap, ColumnBody) => {
   CancelWrap.addEventListener('click', DeleteBtnOnClick);
 };
 
-const AddCard = (ColumnBody, columnId) => {
+const AddCard = (ColumnBody, columnId, cardCnt) => {
   const Container = getContainer(null, 'addcard-container', null);
   const AddCardTitle = getContainer(null, 'addcard-title', 'title');
   const AddCardTitleArea = getInput(null, 'addcard-title-area', null, 'addtitle');
@@ -55,7 +59,14 @@ const AddCard = (ColumnBody, columnId) => {
   AcceptWrap.insertAdjacentElement('beforeend', AcceptBtn);
   CancelWrap.insertAdjacentElement('beforeend', CancelBtn);
 
-  AcceptBtnOnClickEvent(ColumnBody, AcceptWrap, AddCardTitleArea, AddCardContentArea, columnId);
+  AcceptBtnOnClickEvent(
+    ColumnBody,
+    AcceptWrap,
+    AddCardTitleArea,
+    AddCardContentArea,
+    columnId,
+    cardCnt
+  );
   DeleteBtnOnClickEvent(CancelWrap, ColumnBody);
 
   AddCardBtnWrap.insertAdjacentElement('beforeend', AcceptWrap);

@@ -2,10 +2,10 @@ import { getContainer, getBtn } from '../common.js';
 // import Card from '../Card/index.js';
 import AddCard from '../AddCard/index.js';
 
-const AddCardOnClickEvent = (MakeCardWrap, ColumnBody, columnId) => {
+const AddCardOnClickEvent = (MakeCardWrap, ColumnBody, columnId, cardCnt) => {
   const AddCardOnClick = () => {
     if (!ColumnBody.firstChild || !ColumnBody.firstChild.classList.contains('addcard-container')) {
-      ColumnBody.insertAdjacentElement('afterbegin', AddCard(ColumnBody, columnId));
+      ColumnBody.insertAdjacentElement('afterbegin', AddCard(ColumnBody, columnId, cardCnt));
     }
   };
   MakeCardWrap.addEventListener('click', AddCardOnClick);
@@ -27,7 +27,7 @@ const DeleteColumnClickEvent = (DeleteCardWrap, ColumnContainer, columnId) => {
   DeleteCardWrap.addEventListener('click', DeleteColumnClick);
 };
 
-const Column = (title, columnId) => {
+const Column = (title, columnId, cardCnt) => {
   // const onClick = (e) => {
   //   const target = e.target.closest('.column-container');
   //   target.classList.add('column-container-selected');
@@ -39,7 +39,7 @@ const Column = (title, columnId) => {
 
   const ColumnHeaderWrap = getContainer(null, 'column-header-wrap', null);
   const ColumnHeaderTitle = getContainer(null, 'column-header-title', title);
-  const ColumnHeaderCounter = getContainer(null, 'column-header-counter', '0');
+  const ColumnHeaderCounter = getContainer(null, 'column-header-counter', cardCnt);
 
   const ColumnMaker = getContainer(null, 'column-maker', null);
   const ColumnBody = getContainer(null, 'column-body', null);
@@ -63,7 +63,7 @@ const Column = (title, columnId) => {
   ColumnHeader.insertAdjacentElement('beforeend', ColumnHeaderWrap);
   ColumnHeader.insertAdjacentElement('beforeend', ColumnMaker);
 
-  AddCardOnClickEvent(MakeCardWrap, ColumnBody, columnId);
+  AddCardOnClickEvent(MakeCardWrap, ColumnBody, columnId, ColumnHeaderCounter);
   DeleteColumnClickEvent(DeleteCardWrap, ColumnContainer, columnId);
   // AddCard(ColumnBody);
   // ColumnBody.insertAdjacentElement('beforeend', AddCard(ColumnBody));
