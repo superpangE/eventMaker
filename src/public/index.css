@@ -460,7 +460,7 @@
 .detail-container {
   position: fixed;
   right: 0;
-  border: 1px solid;
+  border-left: 1px solid #7b7b7c80;
   width: 240px;
   height: 100%;
 }
@@ -474,8 +474,12 @@
 .detail-title {
   margin-left: 5px;
 }
+.detail-title:hover{
+  cursor: pointer;
+  color:#3d8ad8;
+}
 #detail-close {
-  margin-right: 10px;
+  margin-right: 15px;
   margin-top: 10px;
   color: #6a737d;
 }
@@ -485,20 +489,89 @@
 }
 .detail-header {
   display: flex;
-  border-bottom: solid 1px;
+  border-bottom: solid 1px #7b7b7c80;
   justify-content: space-between;
   height: 40px;
 }
+.detail-author{
+  display : flex;
+  margin-left : 5px;
+}
+#author-icon{
+  width : 50px;
+  height: 50px;
+}
+.author-info{
+  margin-left : 10px;
+  margin-top : 5px;
+}
+.author-top{
+  display :flex;
+  width : 160px;
+  justify-content: space-between;
+}
+#author-edit{
+  margin-left : 5px;
+}
+#author-emo:hover,
+#author-edit:hover{
+  cursor: pointer;
+  color:#3d8ad8;
+}
+.author-date{
+  margin-top : 5px;
+  font-size : 5px;
+}
+.detail-content{
+  height : 300px;
+  border-top : 1px solid #7b7b7c80;
+  border-bottom : 1px solid #7b7b7c80;
+}
+.assignees-wrap,
+.labels-wrap,
+.projects-wrap,
+.milestone-wrap{
+  margin : 20px;
+  padding-bottom : 20px;
+  border-bottom : solid 1px#7b7b7c80;
+}
+.assignees-header,
+.labels-header,
+.projects-header,
+.milestone-header{
+  display : flex;
+  justify-content: space-between;
+}
+.assignees-header:hover,
+.labels-header:hover,
+.projects-header:hover,
+.milestone-header:hover{
+  cursor: pointer;
+  color:#3d8ad8;
+}
+.assignees-content,
+.labels-content,
+.projects-content,
+.milestone-content{
+  font-size : 5px;
+  margin-top : 5px;
+}
 .detail-foot {
-  border: 1px solid;
+  border: 1px solid #7b7b7c80;
   height: 40px;
   position: fixed;
+  border-radius: 10px;
   bottom: 0;
   width: 200px;
   margin-left: 20px;
   margin-bottom: 10px;
   text-align: center;
-  vertical-align: middle;
+  padding-top : 15px;
+  /* vertical-align: middle; */
+}
+.detail-foot:hover{
+  cursor: pointer;
+  background-color: #c9c9c9;
 }
 /* 메인 */
 .body-wrap {
