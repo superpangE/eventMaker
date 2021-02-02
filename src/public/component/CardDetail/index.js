@@ -14,6 +14,10 @@ const CardDetail = () => {
   const AuthorWrap = getContainer(null, 'detail-author', null);
   const AuthorIcon = getBtn('author-icon', 'far fa-address-card', null);
   const AuthorInfo = getContainer(null, 'author-info', null);
+  const AuthorTopWrap = getContainer(null,'author-top', null);
+  const AuthorSetWrap = getContainer(null,'author-set-wrap', null);
+  const AuthorEmo = getBtn('author-emo','far fa-smile', null);
+  const AuthorEdit = getBtn('author-edit', 'fas fa-pencil-alt', null);
   const AuthorName = getContainer(null, 'author-name', 'hypering');
   const AuthorDate = getContainer(null, 'author-date', '2021/02/02');
 
@@ -46,7 +50,11 @@ const CardDetail = () => {
   HeaderLeft.insertAdjacentElement('beforeend', HeaderTitle);
   HeaderContainer.insertAdjacentElement('beforeend', HeaderLeft);
   HeaderContainer.insertAdjacentElement('beforeend', HeaderClose);
-  AuthorInfo.insertAdjacentElement('beforeend', AuthorName);
+  AuthorSetWrap.insertAdjacentElement('beforeend', AuthorEmo);
+  AuthorSetWrap.insertAdjacentElement('beforeend', AuthorEdit);
+  AuthorTopWrap.insertAdjacentElement('beforeend', AuthorName);
+  AuthorTopWrap.insertAdjacentElement('beforeend', AuthorSetWrap); 
+  AuthorInfo.insertAdjacentElement('beforeend', AuthorTopWrap);
   AuthorInfo.insertAdjacentElement('beforeend', AuthorDate);
   AuthorWrap.insertAdjacentElement('beforeend', AuthorIcon);
   AuthorWrap.insertAdjacentElement('beforeend', AuthorInfo);
