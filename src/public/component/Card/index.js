@@ -5,7 +5,6 @@ const DeleteCardClickEvent = (DeleteCardContainer, CardContainer, cardId, cardCn
     CardContainer.remove();
     const cntNum = Number(cardCnt.textContent);
     cardCnt.textContent = cntNum - 1;
-    // console.log(cardId);
     await fetch('http://localhost:3000/card/delete', {
       method: 'post',
       headers: {
@@ -18,8 +17,14 @@ const DeleteCardClickEvent = (DeleteCardContainer, CardContainer, cardId, cardCn
   };
   DeleteCardContainer.addEventListener('click', DeleteCardClick);
 };
+const TitleOnclickEvent = (CardTitle, Detail) => {
+  const TitleOnclick = () => {
+    Detail.classList.add('detail-container-block');
+  };
+  CardTitle.addEventListener('click', TitleOnclick);
+};
 
-const Card = (TitleValue, cardId, cardCnt) => {
+const Card = (TitleValue, cardId, cardCnt, Detail) => {
   const CardContainer = getContainer(null, 'card-container', null);
 
   const CardHeader = getContainer(null, 'card-header', null);
@@ -43,6 +48,7 @@ const Card = (TitleValue, cardId, cardCnt) => {
   DeleteCardContainer.insertAdjacentElement('beforeend', DeleteCard);
   CardHeader.insertAdjacentElement('beforeend', DeleteCardContainer);
 
+  TitleOnclickEvent(CardTitle, Detail);
   DeleteCardClickEvent(DeleteCardContainer, CardContainer, cardId, cardCnt);
 
   ProgressWrap.insertAdjacentElement('beforeend', ProgressIcon);

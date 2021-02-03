@@ -2,10 +2,13 @@ import { getContainer, getBtn } from '../common.js';
 // import Card from '../Card/index.js';
 import AddCard from '../AddCard/index.js';
 
-const AddCardOnClickEvent = (MakeCardWrap, ColumnBody, columnId, cardCnt) => {
+const AddCardOnClickEvent = (MakeCardWrap, ColumnBody, columnId, cardCnt, Detail) => {
   const AddCardOnClick = () => {
     if (!ColumnBody.firstChild || !ColumnBody.firstChild.classList.contains('addcard-container')) {
-      ColumnBody.insertAdjacentElement('afterbegin', AddCard(ColumnBody, columnId, cardCnt));
+      ColumnBody.insertAdjacentElement(
+        'afterbegin',
+        AddCard(ColumnBody, columnId, cardCnt, Detail)
+      );
     }
   };
   MakeCardWrap.addEventListener('click', AddCardOnClick);
@@ -27,7 +30,7 @@ const DeleteColumnClickEvent = (DeleteCardWrap, ColumnContainer, columnId) => {
   DeleteCardWrap.addEventListener('click', DeleteColumnClick);
 };
 
-const Column = (title, columnId, cardCnt) => {
+const Column = (title, columnId, cardCnt, Detail) => {
   // const onClick = (e) => {
   //   const target = e.target.closest('.column-container');
   //   target.classList.add('column-container-selected');
@@ -63,7 +66,7 @@ const Column = (title, columnId, cardCnt) => {
   ColumnHeader.insertAdjacentElement('beforeend', ColumnHeaderWrap);
   ColumnHeader.insertAdjacentElement('beforeend', ColumnMaker);
 
-  AddCardOnClickEvent(MakeCardWrap, ColumnBody, columnId, ColumnHeaderCounter);
+  AddCardOnClickEvent(MakeCardWrap, ColumnBody, columnId, ColumnHeaderCounter, Detail);
   DeleteColumnClickEvent(DeleteCardWrap, ColumnContainer, columnId);
   // AddCard(ColumnBody);
   // ColumnBody.insertAdjacentElement('beforeend', AddCard(ColumnBody));

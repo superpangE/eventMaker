@@ -1,5 +1,10 @@
 import { getContainer, getBtn } from '../common.js';
-
+const CloseOnclickEvent = (HeaderClose, MainContainer) => {
+  const CloseOnclick = () => {
+    MainContainer.classList.remove('detail-container-block');
+  };
+  HeaderClose.addEventListener('click', CloseOnclick);
+};
 const CardDetail = () => {
   const MainContainer = getContainer(null, 'detail-container', null);
   const HeaderContainer = getContainer(null, 'detail-header', null);
@@ -9,14 +14,15 @@ const CardDetail = () => {
   const HeaderIcon = getBtn('detail-icon', 'fas fa-exclamation-circle', null);
   const HeaderTitle = getContainer(null, 'detail-title', '이거슨');
   const HeaderLeft = getContainer(null, 'header-left', null);
+  const CloseWrap = getContainer(null, 'close-wrap', null);
   const HeaderClose = getBtn('detail-close', 'fas fa-sign-out-alt', null);
 
   const AuthorWrap = getContainer(null, 'detail-author', null);
   const AuthorIcon = getBtn('author-icon', 'far fa-address-card', null);
   const AuthorInfo = getContainer(null, 'author-info', null);
-  const AuthorTopWrap = getContainer(null,'author-top', null);
-  const AuthorSetWrap = getContainer(null,'author-set-wrap', null);
-  const AuthorEmo = getBtn('author-emo','far fa-smile', null);
+  const AuthorTopWrap = getContainer(null, 'author-top', null);
+  const AuthorSetWrap = getContainer(null, 'author-set-wrap', null);
+  const AuthorEmo = getBtn('author-emo', 'far fa-smile', null);
   const AuthorEdit = getBtn('author-edit', 'fas fa-pencil-alt', null);
   const AuthorName = getContainer(null, 'author-name', 'hypering');
   const AuthorDate = getContainer(null, 'author-date', '2021/02/02');
@@ -49,11 +55,12 @@ const CardDetail = () => {
   HeaderLeft.insertAdjacentElement('beforeend', HeaderIcon);
   HeaderLeft.insertAdjacentElement('beforeend', HeaderTitle);
   HeaderContainer.insertAdjacentElement('beforeend', HeaderLeft);
-  HeaderContainer.insertAdjacentElement('beforeend', HeaderClose);
+  CloseWrap.insertAdjacentElement('beforeend', HeaderClose);
+  HeaderContainer.insertAdjacentElement('beforeend', CloseWrap);
   AuthorSetWrap.insertAdjacentElement('beforeend', AuthorEmo);
   AuthorSetWrap.insertAdjacentElement('beforeend', AuthorEdit);
   AuthorTopWrap.insertAdjacentElement('beforeend', AuthorName);
-  AuthorTopWrap.insertAdjacentElement('beforeend', AuthorSetWrap); 
+  AuthorTopWrap.insertAdjacentElement('beforeend', AuthorSetWrap);
   AuthorInfo.insertAdjacentElement('beforeend', AuthorTopWrap);
   AuthorInfo.insertAdjacentElement('beforeend', AuthorDate);
   AuthorWrap.insertAdjacentElement('beforeend', AuthorIcon);
@@ -89,6 +96,8 @@ const CardDetail = () => {
   MainContainer.insertAdjacentElement('beforeend', HeaderContainer);
   MainContainer.insertAdjacentElement('beforeend', BodyContainer);
   MainContainer.insertAdjacentElement('beforeend', FootContainer);
+
+  CloseOnclickEvent(CloseWrap, MainContainer);
 
   return MainContainer;
 };
