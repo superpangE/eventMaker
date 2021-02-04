@@ -10,7 +10,7 @@
   font-family: 'Recipekorea';
 }
 /* 헤더 */
-@media (min-width: 780px) {
+@media (min-width: 835px) {
   .header-wrap {
     display: flex;
     background-color: #24292e;
@@ -76,7 +76,7 @@
     display: none;
   }
 }
-@media (max-width: 779px) {
+@media (max-width: 834px) {
   .header-wrap {
     display: flex;
     background-color: #24292e;
@@ -120,8 +120,7 @@
 }
 
 /* 메뉴 바 */
-@media (min-width:1150px)
-{
+@media (min-width: 1150px) {
   .menu-title-wrap,
   .menu-left-wrap,
   .menu-right-wrap,
@@ -138,55 +137,55 @@
   .security-wrap,
   .insight-wrap,
   .setting-wrap,
-  .bottom-menu{
-    display:flex;
+  .bottom-menu {
+    display: flex;
   }
-  .menu-title-wrap{
+  .menu-title-wrap {
     justify-content: space-between;
-    margin : 20px;
+    margin: 20px;
   }
   .menu-title,
   .unwatch-title,
   .unstar-title,
-  .fork-title{
-    margin-left : 5px;
-    margin-right : 10px;
+  .fork-title {
+    margin-left: 5px;
+    margin-right: 10px;
   }
-  .menu-title{
-    color : rgb(51, 64, 250);
-    font-weight:lighter;
+  .menu-title {
+    color: rgb(51, 64, 250);
+    font-weight: lighter;
   }
   .unwatch-title,
   .unstar-title,
-  .fork-title{
-    font-size : 14px;
+  .fork-title {
+    font-size: 14px;
   }
   .unwatch-wrap,
   .unstar-wrap,
-  .fork-wrap{
-    padding : 3px 5px;
-    margin-right : 10px;
-    color : #00000080;
-    border : 1px solid #5f5f5f80;
+  .fork-wrap {
+    padding: 3px 5px;
+    margin-right: 10px;
+    color: #00000080;
+    border: 1px solid #5f5f5f80;
     border-radius: 5px;
   }
   .unwatch-wrap:hover,
   .unstar-wrap:hover,
-  .fork-wrap:hover{
+  .fork-wrap:hover {
     cursor: pointer;
     background-color: #bdbdbd;
   }
-  .menu-bar-wrap{
-    width : 1100px;
-    margin-left : 50px;
+  .menu-bar-wrap {
+    width: 1100px;
+    margin-left: 50px;
   }
-  .bottom-menu{
+  .bottom-menu {
     justify-content: space-between;
     /* padding-bottom : 15px; */
     border-bottom: 1px solid #5f5f5f80;
   }
-  .more-menu{
-    display :none;
+  .more-menu {
+    display: none;
   }
   .menu-bar-wrap,
   .code-wrap,
@@ -197,11 +196,11 @@
   .wiki-wrap,
   .security-wrap,
   .insight-wrap,
-  .setting-wrap{
-    color : #0e0e0e80;
-    margin-right : 15px;
-    margin-left : 15px;
-    padding-bottom:10px;
+  .setting-wrap {
+    color: #0e0e0e80;
+    margin-right: 15px;
+    margin-left: 15px;
+    padding-bottom: 10px;
   }
   .code-title,
   .issue-title,
@@ -211,8 +210,8 @@
   .wiki-title,
   .security-title,
   .insight-title,
-  .setting-title{
-    margin-left : 5px;
+  .setting-title {
+    margin-left: 5px;
   }
   .code-wrap:hover,
   .issue-wrap:hover,
@@ -222,14 +221,13 @@
   .wiki-wrap:hover,
   .security-wrap:hover,
   .insight-wrap:hover,
-  .setting-wrap:hover{
+  .setting-wrap:hover {
     cursor: pointer;
-    margin-bottom : -10px;
+    margin-bottom: -10px;
     border-bottom: 2px solid black;
   }
 }
-@media (max-width:1149px) and (min-width:1055px)
-{
+@media (max-width: 1149px) and (min-width: 1055px) {
   .menu-title-wrap,
   .menu-left-wrap,
   .menu-right-wrap,
@@ -245,55 +243,55 @@
   .wiki-wrap,
   .security-wrap,
   .insight-wrap,
-  .bottom-menu{
-    display:flex;
+  .bottom-menu {
+    display: flex;
   }
-  .menu-title-wrap{
+  .menu-title-wrap {
     justify-content: space-between;
-    margin : 20px;
+    margin: 20px;
   }
   .menu-title,
   .unwatch-title,
   .unstar-title,
-  .fork-title{
-    margin-left : 5px;
-    margin-right : 10px;
+  .fork-title {
+    margin-left: 5px;
+    margin-right: 10px;
   }
-  .menu-title{
-    color : rgb(51, 64, 250);
-    font-weight:lighter;
+  .menu-title {
+    color: rgb(51, 64, 250);
+    font-weight: lighter;
   }
   .unwatch-title,
   .unstar-title,
-  .fork-title{
-    font-size : 14px;
+  .fork-title {
+    font-size: 14px;
   }
   .unwatch-wrap,
   .unstar-wrap,
-  .fork-wrap{
-    padding : 3px 5px;
-    margin-right : 10px;
-    color : #00000080;
-    border : 1px solid #5f5f5f80;
+  .fork-wrap {
+    padding: 3px 5px;
+    margin-right: 10px;
+    color: #00000080;
+    border: 1px solid #5f5f5f80;
     border-radius: 5px;
   }
   .unwatch-wrap:hover,
   .unstar-wrap:hover,
-  .fork-wrap:hover{
+  .fork-wrap:hover {
     cursor: pointer;
     background-color: #bdbdbd;
   }
-  .menu-bar-wrap{
-    width : 1100px;
-    margin-left : 50px;
+  .menu-bar-wrap {
+    width: 1100px;
+    margin-left: 50px;
   }
-  .bottom-menu{
+  .bottom-menu {
     justify-content: space-between;
     /* padding-bottom : 15px; */
     border-bottom: 1px solid #5f5f5f80;
   }
-  .more-menu{
-    display :none;
+  .more-menu {
+    display: none;
   }
   .menu-bar-wrap,
   .code-wrap,
@@ -303,11 +301,11 @@
   .project-wrap,
   .wiki-wrap,
   .security-wrap,
-  .insight-wrap{
-    color : #0e0e0e80;
-    margin-right : 15px;
-    margin-left : 15px;
-    padding-bottom:10px;
+  .insight-wrap {
+    color: #0e0e0e80;
+    margin-right: 15px;
+    margin-left: 15px;
+    padding-bottom: 10px;
   }
   .code-title,
   .issue-title,
@@ -316,19 +314,19 @@
   .project-title,
   .wiki-title,
   .security-title,
-  .insight-title{
-    margin-left : 5px;
+  .insight-title {
+    margin-left: 5px;
   }
-  .more-menu{
+  .more-menu {
     display: block;
-    color : #5f5f5f80;
-    margin-right : 50px;
+    color: #5f5f5f80;
+    margin-right: 50px;
   }
-  .more-menu:hover{
-    cursor:pointer;
+  .more-menu:hover {
+    cursor: pointer;
   }
-  .setting-wrap{
-    display:none;
+  .setting-wrap {
+    display: none;
   }
   .code-wrap:hover,
   .issue-wrap:hover,
@@ -338,14 +336,13 @@
   .wiki-wrap:hover,
   .security-wrap:hover,
   .insight-wrap:hover,
-  .setting-wrap:hover{
+  .setting-wrap:hover {
     cursor: pointer;
-    margin-bottom : -10px;
+    margin-bottom: -10px;
     border-bottom: 2px solid black;
   }
 }
-@media (max-width:1054px) and (min-width:930px)
-{
+@media (max-width: 1054px) and (min-width: 930px) {
   .menu-title-wrap,
   .menu-left-wrap,
   .menu-right-wrap,
@@ -360,49 +357,49 @@
   .project-wrap,
   .wiki-wrap,
   .security-wrap,
-  .bottom-menu{
-    display:flex;
+  .bottom-menu {
+    display: flex;
   }
-  .menu-title-wrap{
+  .menu-title-wrap {
     justify-content: space-between;
-    margin : 20px;
+    margin: 20px;
   }
   .menu-title,
   .unwatch-title,
   .unstar-title,
-  .fork-title{
-    margin-left : 5px;
-    margin-right : 10px;
+  .fork-title {
+    margin-left: 5px;
+    margin-right: 10px;
   }
-  .menu-title{
-    color : rgb(51, 64, 250);
-    font-weight:lighter;
+  .menu-title {
+    color: rgb(51, 64, 250);
+    font-weight: lighter;
   }
   .unwatch-title,
   .unstar-title,
-  .fork-title{
-    font-size : 14px;
+  .fork-title {
+    font-size: 14px;
   }
   .unwatch-wrap,
   .unstar-wrap,
-  .fork-wrap{
-    padding : 3px 5px;
-    margin-right : 10px;
-    color : #00000080;
-    border : 1px solid #5f5f5f80;
+  .fork-wrap {
+    padding: 3px 5px;
+    margin-right: 10px;
+    color: #00000080;
+    border: 1px solid #5f5f5f80;
     border-radius: 5px;
   }
   .unwatch-wrap:hover,
   .unstar-wrap:hover,
-  .fork-wrap:hover{
+  .fork-wrap:hover {
     cursor: pointer;
     background-color: #bdbdbd;
   }
-  .menu-bar-wrap{
-    width : 1100px;
-    margin-left : 50px;
+  .menu-bar-wrap {
+    width: 1100px;
+    margin-left: 50px;
   }
-  .bottom-menu{
+  .bottom-menu {
     justify-content: space-between;
     border-bottom: 1px solid #5f5f5f80;
   }
@@ -413,11 +410,11 @@
   .action-wrap,
   .project-wrap,
   .wiki-wrap,
-  .security-wrap{
-    color : #0e0e0e80;
-    margin-right : 15px;
-    margin-left : 15px;
-    padding-bottom:10px;
+  .security-wrap {
+    color: #0e0e0e80;
+    margin-right: 15px;
+    margin-left: 15px;
+    padding-bottom: 10px;
   }
   .code-title,
   .issue-title,
@@ -425,20 +422,20 @@
   .action-title,
   .project-title,
   .wiki-title,
-  .security-title{
-    margin-left : 5px;
+  .security-title {
+    margin-left: 5px;
   }
-  .more-menu{
+  .more-menu {
     display: block;
-    color : #5f5f5f80;
-    margin-right : 50px;
+    color: #5f5f5f80;
+    margin-right: 50px;
   }
-  .more-menu:hover{
-    cursor:pointer;
+  .more-menu:hover {
+    cursor: pointer;
   }
   .setting-wrap,
-  .insight-wrap{
-    display:none;
+  .insight-wrap {
+    display: none;
   }
   .code-wrap:hover,
   .issue-wrap:hover,
@@ -448,14 +445,13 @@
   .wiki-wrap:hover,
   .security-wrap:hover,
   .insight-wrap:hover,
-  .setting-wrap:hover{
+  .setting-wrap:hover {
     cursor: pointer;
-    margin-bottom : -10px;
+    margin-bottom: -10px;
     border-bottom: 2px solid black;
   }
 }
-@media (max-width:929px) and (min-width:810px)
-{
+@media (max-width: 929px) and (min-width: 810px) {
   .menu-title-wrap,
   .menu-left-wrap,
   .menu-right-wrap,
@@ -469,49 +465,49 @@
   .action-wrap,
   .project-wrap,
   .wiki-wrap,
-  .bottom-menu{
-    display:flex;
+  .bottom-menu {
+    display: flex;
   }
-  .menu-title-wrap{
+  .menu-title-wrap {
     justify-content: space-between;
-    margin : 20px;
+    margin: 20px;
   }
   .menu-title,
   .unwatch-title,
   .unstar-title,
-  .fork-title{
-    margin-left : 5px;
-    margin-right : 10px;
+  .fork-title {
+    margin-left: 5px;
+    margin-right: 10px;
   }
-  .menu-title{
-    color : rgb(51, 64, 250);
-    font-weight:lighter;
+  .menu-title {
+    color: rgb(51, 64, 250);
+    font-weight: lighter;
   }
   .unwatch-title,
   .unstar-title,
-  .fork-title{
-    font-size : 14px;
+  .fork-title {
+    font-size: 14px;
   }
   .unwatch-wrap,
   .unstar-wrap,
-  .fork-wrap{
-    padding : 3px 5px;
-    margin-right : 10px;
-    color : #00000080;
-    border : 1px solid #5f5f5f80;
+  .fork-wrap {
+    padding: 3px 5px;
+    margin-right: 10px;
+    color: #00000080;
+    border: 1px solid #5f5f5f80;
     border-radius: 5px;
   }
   .unwatch-wrap:hover,
   .unstar-wrap:hover,
-  .fork-wrap:hover{
+  .fork-wrap:hover {
     cursor: pointer;
     background-color: #bdbdbd;
   }
-  .menu-bar-wrap{
-    width : 1100px;
-    margin-left : 50px;
+  .menu-bar-wrap {
+    width: 1100px;
+    margin-left: 50px;
   }
-  .bottom-menu{
+  .bottom-menu {
     justify-content: space-between;
     border-bottom: 1px solid #5f5f5f80;
   }
@@ -521,32 +517,32 @@
   .pr-wrap,
   .action-wrap,
   .project-wrap,
-  .wiki-wrap{
-    color : #0e0e0e80;
-    margin-right : 15px;
-    margin-left : 15px;
-    padding-bottom:10px;
+  .wiki-wrap {
+    color: #0e0e0e80;
+    margin-right: 15px;
+    margin-left: 15px;
+    padding-bottom: 10px;
   }
   .code-title,
   .issue-title,
   .pr-title,
   .action-title,
   .project-title,
-  .wiki-title{
-    margin-left : 5px;
+  .wiki-title {
+    margin-left: 5px;
   }
-  .more-menu{
+  .more-menu {
     display: block;
-    color : #5f5f5f80;
-    margin-right : 50px;
+    color: #5f5f5f80;
+    margin-right: 50px;
   }
-  .more-menu:hover{
-    cursor:pointer;
+  .more-menu:hover {
+    cursor: pointer;
   }
   .setting-wrap,
   .insight-wrap,
-  .security-wrap{
-    display:none;
+  .security-wrap {
+    display: none;
   }
   .code-wrap:hover,
   .issue-wrap:hover,
@@ -556,14 +552,13 @@
   .wiki-wrap:hover,
   .security-wrap:hover,
   .insight-wrap:hover,
-  .setting-wrap:hover{
+  .setting-wrap:hover {
     cursor: pointer;
-    margin-bottom : -10px;
+    margin-bottom: -10px;
     border-bottom: 2px solid black;
   }
 }
-@media (max-width:809px) and (min-width:720px)
-{
+@media (max-width: 809px) and (min-width: 720px) {
   .menu-title-wrap,
   .menu-left-wrap,
   .menu-right-wrap,
@@ -576,49 +571,49 @@
   .pr-wrap,
   .action-wrap,
   .project-wrap,
-  .bottom-menu{
-    display:flex;
+  .bottom-menu {
+    display: flex;
   }
-  .menu-title-wrap{
+  .menu-title-wrap {
     justify-content: space-between;
-    margin : 20px;
+    margin: 20px;
   }
   .menu-title,
   .unwatch-title,
   .unstar-title,
-  .fork-title{
-    margin-left : 5px;
-    margin-right : 10px;
+  .fork-title {
+    margin-left: 5px;
+    margin-right: 10px;
   }
-  .menu-title{
-    color : rgb(51, 64, 250);
-    font-weight:lighter;
+  .menu-title {
+    color: rgb(51, 64, 250);
+    font-weight: lighter;
   }
   .unwatch-title,
   .unstar-title,
-  .fork-title{
-    font-size : 14px;
+  .fork-title {
+    font-size: 14px;
   }
   .unwatch-wrap,
   .unstar-wrap,
-  .fork-wrap{
-    padding : 3px 5px;
-    margin-right : 10px;
-    color : #00000080;
-    border : 1px solid #5f5f5f80;
+  .fork-wrap {
+    padding: 3px 5px;
+    margin-right: 10px;
+    color: #00000080;
+    border: 1px solid #5f5f5f80;
     border-radius: 5px;
   }
   .unwatch-wrap:hover,
   .unstar-wrap:hover,
-  .fork-wrap:hover{
+  .fork-wrap:hover {
     cursor: pointer;
     background-color: #bdbdbd;
   }
-  .menu-bar-wrap{
-    width : 1100px;
-    margin-left : 50px;
+  .menu-bar-wrap {
+    width: 1100px;
+    margin-left: 50px;
   }
-  .bottom-menu{
+  .bottom-menu {
     justify-content: space-between;
     border-bottom: 1px solid #5f5f5f80;
   }
@@ -627,32 +622,32 @@
   .issue-wrap,
   .pr-wrap,
   .action-wrap,
-  .project-wrap{
-    color : #0e0e0e80;
-    margin-right : 15px;
-    margin-left : 15px;
-    padding-bottom:10px;
+  .project-wrap {
+    color: #0e0e0e80;
+    margin-right: 15px;
+    margin-left: 15px;
+    padding-bottom: 10px;
   }
   .code-title,
   .issue-title,
   .pr-title,
   .action-title,
-  .project-title{
-    margin-left : 5px;
+  .project-title {
+    margin-left: 5px;
   }
-  .more-menu{
+  .more-menu {
     display: block;
-    color : #5f5f5f80;
-    margin-right : 50px;
+    color: #5f5f5f80;
+    margin-right: 50px;
   }
-  .more-menu:hover{
-    cursor:pointer;
+  .more-menu:hover {
+    cursor: pointer;
   }
   .setting-wrap,
   .insight-wrap,
   .security-wrap,
-  .wiki-wrap{
-    display:none;
+  .wiki-wrap {
+    display: none;
   }
   .code-wrap:hover,
   .issue-wrap:hover,
@@ -662,14 +657,13 @@
   .wiki-wrap:hover,
   .security-wrap:hover,
   .insight-wrap:hover,
-  .setting-wrap:hover{
+  .setting-wrap:hover {
     cursor: pointer;
-    margin-bottom : -10px;
+    margin-bottom: -10px;
     border-bottom: 2px solid black;
   }
 }
-@media (max-width:719px) and (min-width:600px)
-{
+@media (max-width: 719px) and (min-width: 600px) {
   .menu-title-wrap,
   .menu-left-wrap,
   .menu-right-wrap,
@@ -682,49 +676,49 @@
   .pr-wrap,
   .action-wrap,
   .project-wrap,
-  .bottom-menu{
-    display:flex;
+  .bottom-menu {
+    display: flex;
   }
-  .menu-title-wrap{
+  .menu-title-wrap {
     justify-content: space-between;
-    margin : 20px;
+    margin: 20px;
   }
   .menu-title,
   .unwatch-title,
   .unstar-title,
-  .fork-title{
-    margin-left : 5px;
-    margin-right : 10px;
+  .fork-title {
+    margin-left: 5px;
+    margin-right: 10px;
   }
-  .menu-title{
-    color : rgb(51, 64, 250);
-    font-weight:lighter;
+  .menu-title {
+    color: rgb(51, 64, 250);
+    font-weight: lighter;
   }
   .unwatch-title,
   .unstar-title,
-  .fork-title{
-    font-size : 14px;
+  .fork-title {
+    font-size: 14px;
   }
   .unwatch-wrap,
   .unstar-wrap,
-  .fork-wrap{
-    padding : 3px 5px;
-    margin-right : 10px;
-    color : #00000080;
-    border : 1px solid #5f5f5f80;
+  .fork-wrap {
+    padding: 3px 5px;
+    margin-right: 10px;
+    color: #00000080;
+    border: 1px solid #5f5f5f80;
     border-radius: 5px;
   }
   .unwatch-wrap:hover,
   .unstar-wrap:hover,
-  .fork-wrap:hover{
+  .fork-wrap:hover {
     cursor: pointer;
     background-color: #bdbdbd;
   }
-  .menu-bar-wrap{
-    width : 1100px;
-    margin-left : 50px;
+  .menu-bar-wrap {
+    width: 1100px;
+    margin-left: 50px;
   }
-  .bottom-menu{
+  .bottom-menu {
     justify-content: space-between;
     border-bottom: 1px solid #5f5f5f80;
   }
@@ -733,33 +727,33 @@
   .issue-wrap,
   .pr-wrap,
   .action-wrap,
-  .project-wrap{
-    color : #0e0e0e80;
-    margin-right : 15px;
-    margin-left : 15px;
-    padding-bottom:10px;
+  .project-wrap {
+    color: #0e0e0e80;
+    margin-right: 15px;
+    margin-left: 15px;
+    padding-bottom: 10px;
   }
   .code-title,
   .issue-title,
   .pr-title,
   .action-title,
-  .project-title{
-    margin-left : 5px;
+  .project-title {
+    margin-left: 5px;
   }
-  .more-menu{
+  .more-menu {
     display: block;
-    color : #5f5f5f80;
-    margin-right : 50px;
+    color: #5f5f5f80;
+    margin-right: 50px;
   }
-  .more-menu:hover{
-    cursor:pointer;
+  .more-menu:hover {
+    cursor: pointer;
   }
   .setting-wrap,
   .insight-wrap,
   .security-wrap,
   .wiki-wrap,
-  .project-wrap{
-    display:none;
+  .project-wrap {
+    display: none;
   }
   .code-wrap:hover,
   .issue-wrap:hover,
@@ -769,14 +763,13 @@
   .wiki-wrap:hover,
   .security-wrap:hover,
   .insight-wrap:hover,
-  .setting-wrap:hover{
+  .setting-wrap:hover {
     cursor: pointer;
-    margin-bottom : -10px;
+    margin-bottom: -10px;
     border-bottom: 2px solid black;
   }
 }
-@media (max-width:599px) and (min-width:490px)
-{
+@media (max-width: 599px) and (min-width: 490px) {
   .menu-title-wrap,
   .menu-left-wrap,
   .menu-right-wrap,
@@ -789,44 +782,44 @@
   .pr-wrap,
   .action-wrap,
   .project-wrap,
-  .bottom-menu{
-    display:flex;
+  .bottom-menu {
+    display: flex;
   }
-  .menu-title-wrap{
+  .menu-title-wrap {
     justify-content: space-between;
-    margin : 20px;
-    margin-bottom:25px;
+    margin: 20px;
+    margin-bottom: 25px;
   }
   .menu-title,
   .unwatch-title,
   .unstar-title,
-  .fork-title{
-    margin-left : 5px;
-    margin-right : 10px;
+  .fork-title {
+    margin-left: 5px;
+    margin-right: 10px;
   }
-  .menu-title{
-    color : rgb(51, 64, 250);
-    font-weight:lighter;
+  .menu-title {
+    color: rgb(51, 64, 250);
+    font-weight: lighter;
   }
   .unwatch-title,
   .unstar-title,
-  .fork-title{
-    font-size : 14px;
+  .fork-title {
+    font-size: 14px;
   }
   .unwatch-wrap,
   .unstar-wrap,
-  .fork-wrap{
-    padding : 3px 5px;
-    margin-right : 10px;
-    color : #00000080;
-    border : 1px solid #5f5f5f80;
+  .fork-wrap {
+    padding: 3px 5px;
+    margin-right: 10px;
+    color: #00000080;
+    border: 1px solid #5f5f5f80;
     border-radius: 5px;
   }
-  .menu-bar-wrap{
-    width : 1100px;
-    margin-left : 50px;
+  .menu-bar-wrap {
+    width: 1100px;
+    margin-left: 50px;
   }
-  .bottom-menu{
+  .bottom-menu {
     justify-content: space-between;
     border-bottom: 1px solid #5f5f5f80;
   }
@@ -835,26 +828,26 @@
   .issue-wrap,
   .pr-wrap,
   .action-wrap,
-  .project-wrap{
-    color : #0e0e0e80;
-    margin-right : 15px;
-    margin-left : 15px;
-    padding-bottom:10px;
+  .project-wrap {
+    color: #0e0e0e80;
+    margin-right: 15px;
+    margin-left: 15px;
+    padding-bottom: 10px;
   }
   .code-title,
   .issue-title,
   .pr-title,
   .action-title,
-  .project-title{
-    margin-left : 5px;
+  .project-title {
+    margin-left: 5px;
   }
-  .more-menu{
+  .more-menu {
     display: block;
-    color : #5f5f5f80;
-    margin-right : 50px;
+    color: #5f5f5f80;
+    margin-right: 50px;
   }
-  .more-menu:hover{
-    cursor:pointer;
+  .more-menu:hover {
+    cursor: pointer;
   }
   .setting-wrap,
   .insight-wrap,
@@ -862,8 +855,8 @@
   .wiki-wrap,
   .project-wrap,
   .action-wrap,
-  .menu-right-wrap{
-    display:none;
+  .menu-right-wrap {
+    display: none;
   }
   .code-wrap:hover,
   .issue-wrap:hover,
@@ -873,14 +866,13 @@
   .wiki-wrap:hover,
   .security-wrap:hover,
   .insight-wrap:hover,
-  .setting-wrap:hover{
+  .setting-wrap:hover {
     cursor: pointer;
-    margin-bottom : -10px;
+    margin-bottom: -10px;
     border-bottom: 2px solid black;
   }
 }
-@media (max-width:489px)
-{
+@media (max-width: 489px) {
   .menu-title-wrap,
   .menu-left-wrap,
   .menu-right-wrap,
@@ -893,44 +885,44 @@
   .pr-wrap,
   .action-wrap,
   .project-wrap,
-  .bottom-menu{
-    display:flex;
+  .bottom-menu {
+    display: flex;
   }
-  .menu-title-wrap{
+  .menu-title-wrap {
     justify-content: space-between;
-    margin : 20px;
-    margin-bottom:25px;
+    margin: 20px;
+    margin-bottom: 25px;
   }
   .menu-title,
   .unwatch-title,
   .unstar-title,
-  .fork-title{
-    margin-left : 5px;
-    margin-right : 10px;
+  .fork-title {
+    margin-left: 5px;
+    margin-right: 10px;
   }
-  .menu-title{
-    color : rgb(51, 64, 250);
-    font-weight:lighter;
+  .menu-title {
+    color: rgb(51, 64, 250);
+    font-weight: lighter;
   }
   .unwatch-title,
   .unstar-title,
-  .fork-title{
-    font-size : 14px;
+  .fork-title {
+    font-size: 14px;
   }
   .unwatch-wrap,
   .unstar-wrap,
-  .fork-wrap{
-    padding : 3px 5px;
-    margin-right : 10px;
-    color : #00000080;
-    border : 1px solid #5f5f5f80;
+  .fork-wrap {
+    padding: 3px 5px;
+    margin-right: 10px;
+    color: #00000080;
+    border: 1px solid #5f5f5f80;
     border-radius: 5px;
   }
-  .menu-bar-wrap{
-    width : 1100px;
-    margin-left : 50px;
+  .menu-bar-wrap {
+    width: 1100px;
+    margin-left: 50px;
   }
-  .bottom-menu{
+  .bottom-menu {
     justify-content: space-between;
     border-bottom: 1px solid #5f5f5f80;
   }
@@ -939,26 +931,26 @@
   .issue-wrap,
   .pr-wrap,
   .action-wrap,
-  .project-wrap{
-    color : #0e0e0e80;
-    margin-right : 15px;
-    margin-left : 15px;
-    padding-bottom:10px;
+  .project-wrap {
+    color: #0e0e0e80;
+    margin-right: 15px;
+    margin-left: 15px;
+    padding-bottom: 10px;
   }
   .code-title,
   .issue-title,
   .pr-title,
   .action-title,
-  .project-title{
-    margin-left : 5px;
+  .project-title {
+    margin-left: 5px;
   }
-  .more-menu{
+  .more-menu {
     display: block;
-    color : #5f5f5f80;
-    margin-right : 50px;
+    color: #5f5f5f80;
+    margin-right: 50px;
   }
-  .more-menu:hover{
-    cursor:pointer;
+  .more-menu:hover {
+    cursor: pointer;
   }
   .setting-wrap,
   .insight-wrap,
@@ -967,8 +959,8 @@
   .project-wrap,
   .action-wrap,
   .menu-right-wrap,
-  .pr-wrap{
-    display:none;
+  .pr-wrap {
+    display: none;
   }
   .code-wrap:hover,
   .issue-wrap:hover,
@@ -978,9 +970,9 @@
   .wiki-wrap:hover,
   .security-wrap:hover,
   .insight-wrap:hover,
-  .setting-wrap:hover{
+  .setting-wrap:hover {
     cursor: pointer;
-    margin-bottom : -10px;
+    margin-bottom: -10px;
     border-bottom: 2px solid black;
   }
 }
@@ -989,8 +981,8 @@
 .column-container {
   width: 350px;
   min-width: 350px;
-  height: 800px;
-  min-height: 800px;
+  height: 700px;
+  min-height: 700px;
   background-color: #f6f8fa;
   border: 1px solid #d1d5da80;
   border-radius: 10px;
@@ -1378,7 +1370,7 @@
 }
 .author-top {
   display: flex;
-  width: 160px;
+  width: 240px;
   justify-content: space-between;
 }
 #author-edit {
@@ -1394,7 +1386,7 @@
   font-size: 5px;
 }
 .detail-content {
-  height: 300px;
+  height: 200px;
   border-top: 1px solid #7b7b7c80;
   border-bottom: 1px solid #7b7b7c80;
 }
