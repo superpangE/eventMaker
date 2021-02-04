@@ -119,6 +119,872 @@
   }
 }
 
+/* 메뉴 바 */
+@media (min-width:1150px)
+{
+  .menu-title-wrap,
+  .menu-left-wrap,
+  .menu-right-wrap,
+  .unwatch-wrap,
+  .unstar-wrap,
+  .fork-wrap,
+  .menu-bar-wrap,
+  .code-wrap,
+  .issue-wrap,
+  .pr-wrap,
+  .action-wrap,
+  .project-wrap,
+  .wiki-wrap,
+  .security-wrap,
+  .insight-wrap,
+  .setting-wrap,
+  .bottom-menu{
+    display:flex;
+  }
+  .menu-title-wrap{
+    justify-content: space-between;
+    margin : 20px;
+  }
+  .menu-title,
+  .unwatch-title,
+  .unstar-title,
+  .fork-title{
+    margin-left : 5px;
+    margin-right : 10px;
+  }
+  .menu-title{
+    color : rgb(51, 64, 250);
+    font-weight:lighter;
+  }
+  .unwatch-title,
+  .unstar-title,
+  .fork-title{
+    font-size : 14px;
+  }
+  .unwatch-wrap,
+  .unstar-wrap,
+  .fork-wrap{
+    padding : 3px 5px;
+    margin-right : 10px;
+    color : #00000080;
+    border : 1px solid #5f5f5f80;
+    border-radius: 5px;
+  }
+  .unwatch-wrap:hover,
+  .unstar-wrap:hover,
+  .fork-wrap:hover{
+    cursor: pointer;
+    background-color: #bdbdbd;
+  }
+  .menu-bar-wrap{
+    width : 1100px;
+    margin-left : 50px;
+  }
+  .bottom-menu{
+    justify-content: space-between;
+    /* padding-bottom : 15px; */
+    border-bottom: 1px solid #5f5f5f80;
+  }
+  .more-menu{
+    display :none;
+  }
+  .menu-bar-wrap,
+  .code-wrap,
+  .issue-wrap,
+  .pr-wrap,
+  .action-wrap,
+  .project-wrap,
+  .wiki-wrap,
+  .security-wrap,
+  .insight-wrap,
+  .setting-wrap{
+    color : #0e0e0e80;
+    margin-right : 15px;
+    margin-left : 15px;
+    padding-bottom:10px;
+  }
+  .code-title,
+  .issue-title,
+  .pr-title,
+  .action-title,
+  .project-title,
+  .wiki-title,
+  .security-title,
+  .insight-title,
+  .setting-title{
+    margin-left : 5px;
+  }
+  .code-wrap:hover,
+  .issue-wrap:hover,
+  .pr-wrap:hover,
+  .action-wrap:hover,
+  .project-wrap:hover,
+  .wiki-wrap:hover,
+  .security-wrap:hover,
+  .insight-wrap:hover,
+  .setting-wrap:hover{
+    cursor: pointer;
+    margin-bottom : -10px;
+    border-bottom: 2px solid black;
+  }
+}
+@media (max-width:1149px) and (min-width:1055px)
+{
+  .menu-title-wrap,
+  .menu-left-wrap,
+  .menu-right-wrap,
+  .unwatch-wrap,
+  .unstar-wrap,
+  .fork-wrap,
+  .menu-bar-wrap,
+  .code-wrap,
+  .issue-wrap,
+  .pr-wrap,
+  .action-wrap,
+  .project-wrap,
+  .wiki-wrap,
+  .security-wrap,
+  .insight-wrap,
+  .bottom-menu{
+    display:flex;
+  }
+  .menu-title-wrap{
+    justify-content: space-between;
+    margin : 20px;
+  }
+  .menu-title,
+  .unwatch-title,
+  .unstar-title,
+  .fork-title{
+    margin-left : 5px;
+    margin-right : 10px;
+  }
+  .menu-title{
+    color : rgb(51, 64, 250);
+    font-weight:lighter;
+  }
+  .unwatch-title,
+  .unstar-title,
+  .fork-title{
+    font-size : 14px;
+  }
+  .unwatch-wrap,
+  .unstar-wrap,
+  .fork-wrap{
+    padding : 3px 5px;
+    margin-right : 10px;
+    color : #00000080;
+    border : 1px solid #5f5f5f80;
+    border-radius: 5px;
+  }
+  .unwatch-wrap:hover,
+  .unstar-wrap:hover,
+  .fork-wrap:hover{
+    cursor: pointer;
+    background-color: #bdbdbd;
+  }
+  .menu-bar-wrap{
+    width : 1100px;
+    margin-left : 50px;
+  }
+  .bottom-menu{
+    justify-content: space-between;
+    /* padding-bottom : 15px; */
+    border-bottom: 1px solid #5f5f5f80;
+  }
+  .more-menu{
+    display :none;
+  }
+  .menu-bar-wrap,
+  .code-wrap,
+  .issue-wrap,
+  .pr-wrap,
+  .action-wrap,
+  .project-wrap,
+  .wiki-wrap,
+  .security-wrap,
+  .insight-wrap{
+    color : #0e0e0e80;
+    margin-right : 15px;
+    margin-left : 15px;
+    padding-bottom:10px;
+  }
+  .code-title,
+  .issue-title,
+  .pr-title,
+  .action-title,
+  .project-title,
+  .wiki-title,
+  .security-title,
+  .insight-title{
+    margin-left : 5px;
+  }
+  .more-menu{
+    display: block;
+    color : #5f5f5f80;
+    margin-right : 50px;
+  }
+  .more-menu:hover{
+    cursor:pointer;
+  }
+  .setting-wrap{
+    display:none;
+  }
+  .code-wrap:hover,
+  .issue-wrap:hover,
+  .pr-wrap:hover,
+  .action-wrap:hover,
+  .project-wrap:hover,
+  .wiki-wrap:hover,
+  .security-wrap:hover,
+  .insight-wrap:hover,
+  .setting-wrap:hover{
+    cursor: pointer;
+    margin-bottom : -10px;
+    border-bottom: 2px solid black;
+  }
+}
+@media (max-width:1054px) and (min-width:930px)
+{
+  .menu-title-wrap,
+  .menu-left-wrap,
+  .menu-right-wrap,
+  .unwatch-wrap,
+  .unstar-wrap,
+  .fork-wrap,
+  .menu-bar-wrap,
+  .code-wrap,
+  .issue-wrap,
+  .pr-wrap,
+  .action-wrap,
+  .project-wrap,
+  .wiki-wrap,
+  .security-wrap,
+  .bottom-menu{
+    display:flex;
+  }
+  .menu-title-wrap{
+    justify-content: space-between;
+    margin : 20px;
+  }
+  .menu-title,
+  .unwatch-title,
+  .unstar-title,
+  .fork-title{
+    margin-left : 5px;
+    margin-right : 10px;
+  }
+  .menu-title{
+    color : rgb(51, 64, 250);
+    font-weight:lighter;
+  }
+  .unwatch-title,
+  .unstar-title,
+  .fork-title{
+    font-size : 14px;
+  }
+  .unwatch-wrap,
+  .unstar-wrap,
+  .fork-wrap{
+    padding : 3px 5px;
+    margin-right : 10px;
+    color : #00000080;
+    border : 1px solid #5f5f5f80;
+    border-radius: 5px;
+  }
+  .unwatch-wrap:hover,
+  .unstar-wrap:hover,
+  .fork-wrap:hover{
+    cursor: pointer;
+    background-color: #bdbdbd;
+  }
+  .menu-bar-wrap{
+    width : 1100px;
+    margin-left : 50px;
+  }
+  .bottom-menu{
+    justify-content: space-between;
+    border-bottom: 1px solid #5f5f5f80;
+  }
+  .menu-bar-wrap,
+  .code-wrap,
+  .issue-wrap,
+  .pr-wrap,
+  .action-wrap,
+  .project-wrap,
+  .wiki-wrap,
+  .security-wrap{
+    color : #0e0e0e80;
+    margin-right : 15px;
+    margin-left : 15px;
+    padding-bottom:10px;
+  }
+  .code-title,
+  .issue-title,
+  .pr-title,
+  .action-title,
+  .project-title,
+  .wiki-title,
+  .security-title{
+    margin-left : 5px;
+  }
+  .more-menu{
+    display: block;
+    color : #5f5f5f80;
+    margin-right : 50px;
+  }
+  .more-menu:hover{
+    cursor:pointer;
+  }
+  .setting-wrap,
+  .insight-wrap{
+    display:none;
+  }
+  .code-wrap:hover,
+  .issue-wrap:hover,
+  .pr-wrap:hover,
+  .action-wrap:hover,
+  .project-wrap:hover,
+  .wiki-wrap:hover,
+  .security-wrap:hover,
+  .insight-wrap:hover,
+  .setting-wrap:hover{
+    cursor: pointer;
+    margin-bottom : -10px;
+    border-bottom: 2px solid black;
+  }
+}
+@media (max-width:929px) and (min-width:810px)
+{
+  .menu-title-wrap,
+  .menu-left-wrap,
+  .menu-right-wrap,
+  .unwatch-wrap,
+  .unstar-wrap,
+  .fork-wrap,
+  .menu-bar-wrap,
+  .code-wrap,
+  .issue-wrap,
+  .pr-wrap,
+  .action-wrap,
+  .project-wrap,
+  .wiki-wrap,
+  .bottom-menu{
+    display:flex;
+  }
+  .menu-title-wrap{
+    justify-content: space-between;
+    margin : 20px;
+  }
+  .menu-title,
+  .unwatch-title,
+  .unstar-title,
+  .fork-title{
+    margin-left : 5px;
+    margin-right : 10px;
+  }
+  .menu-title{
+    color : rgb(51, 64, 250);
+    font-weight:lighter;
+  }
+  .unwatch-title,
+  .unstar-title,
+  .fork-title{
+    font-size : 14px;
+  }
+  .unwatch-wrap,
+  .unstar-wrap,
+  .fork-wrap{
+    padding : 3px 5px;
+    margin-right : 10px;
+    color : #00000080;
+    border : 1px solid #5f5f5f80;
+    border-radius: 5px;
+  }
+  .unwatch-wrap:hover,
+  .unstar-wrap:hover,
+  .fork-wrap:hover{
+    cursor: pointer;
+    background-color: #bdbdbd;
+  }
+  .menu-bar-wrap{
+    width : 1100px;
+    margin-left : 50px;
+  }
+  .bottom-menu{
+    justify-content: space-between;
+    border-bottom: 1px solid #5f5f5f80;
+  }
+  .menu-bar-wrap,
+  .code-wrap,
+  .issue-wrap,
+  .pr-wrap,
+  .action-wrap,
+  .project-wrap,
+  .wiki-wrap{
+    color : #0e0e0e80;
+    margin-right : 15px;
+    margin-left : 15px;
+    padding-bottom:10px;
+  }
+  .code-title,
+  .issue-title,
+  .pr-title,
+  .action-title,
+  .project-title,
+  .wiki-title{
+    margin-left : 5px;
+  }
+  .more-menu{
+    display: block;
+    color : #5f5f5f80;
+    margin-right : 50px;
+  }
+  .more-menu:hover{
+    cursor:pointer;
+  }
+  .setting-wrap,
+  .insight-wrap,
+  .security-wrap{
+    display:none;
+  }
+  .code-wrap:hover,
+  .issue-wrap:hover,
+  .pr-wrap:hover,
+  .action-wrap:hover,
+  .project-wrap:hover,
+  .wiki-wrap:hover,
+  .security-wrap:hover,
+  .insight-wrap:hover,
+  .setting-wrap:hover{
+    cursor: pointer;
+    margin-bottom : -10px;
+    border-bottom: 2px solid black;
+  }
+}
+@media (max-width:809px) and (min-width:720px)
+{
+  .menu-title-wrap,
+  .menu-left-wrap,
+  .menu-right-wrap,
+  .unwatch-wrap,
+  .unstar-wrap,
+  .fork-wrap,
+  .menu-bar-wrap,
+  .code-wrap,
+  .issue-wrap,
+  .pr-wrap,
+  .action-wrap,
+  .project-wrap,
+  .bottom-menu{
+    display:flex;
+  }
+  .menu-title-wrap{
+    justify-content: space-between;
+    margin : 20px;
+  }
+  .menu-title,
+  .unwatch-title,
+  .unstar-title,
+  .fork-title{
+    margin-left : 5px;
+    margin-right : 10px;
+  }
+  .menu-title{
+    color : rgb(51, 64, 250);
+    font-weight:lighter;
+  }
+  .unwatch-title,
+  .unstar-title,
+  .fork-title{
+    font-size : 14px;
+  }
+  .unwatch-wrap,
+  .unstar-wrap,
+  .fork-wrap{
+    padding : 3px 5px;
+    margin-right : 10px;
+    color : #00000080;
+    border : 1px solid #5f5f5f80;
+    border-radius: 5px;
+  }
+  .unwatch-wrap:hover,
+  .unstar-wrap:hover,
+  .fork-wrap:hover{
+    cursor: pointer;
+    background-color: #bdbdbd;
+  }
+  .menu-bar-wrap{
+    width : 1100px;
+    margin-left : 50px;
+  }
+  .bottom-menu{
+    justify-content: space-between;
+    border-bottom: 1px solid #5f5f5f80;
+  }
+  .menu-bar-wrap,
+  .code-wrap,
+  .issue-wrap,
+  .pr-wrap,
+  .action-wrap,
+  .project-wrap{
+    color : #0e0e0e80;
+    margin-right : 15px;
+    margin-left : 15px;
+    padding-bottom:10px;
+  }
+  .code-title,
+  .issue-title,
+  .pr-title,
+  .action-title,
+  .project-title{
+    margin-left : 5px;
+  }
+  .more-menu{
+    display: block;
+    color : #5f5f5f80;
+    margin-right : 50px;
+  }
+  .more-menu:hover{
+    cursor:pointer;
+  }
+  .setting-wrap,
+  .insight-wrap,
+  .security-wrap,
+  .wiki-wrap{
+    display:none;
+  }
+  .code-wrap:hover,
+  .issue-wrap:hover,
+  .pr-wrap:hover,
+  .action-wrap:hover,
+  .project-wrap:hover,
+  .wiki-wrap:hover,
+  .security-wrap:hover,
+  .insight-wrap:hover,
+  .setting-wrap:hover{
+    cursor: pointer;
+    margin-bottom : -10px;
+    border-bottom: 2px solid black;
+  }
+}
+@media (max-width:719px) and (min-width:600px)
+{
+  .menu-title-wrap,
+  .menu-left-wrap,
+  .menu-right-wrap,
+  .unwatch-wrap,
+  .unstar-wrap,
+  .fork-wrap,
+  .menu-bar-wrap,
+  .code-wrap,
+  .issue-wrap,
+  .pr-wrap,
+  .action-wrap,
+  .project-wrap,
+  .bottom-menu{
+    display:flex;
+  }
+  .menu-title-wrap{
+    justify-content: space-between;
+    margin : 20px;
+  }
+  .menu-title,
+  .unwatch-title,
+  .unstar-title,
+  .fork-title{
+    margin-left : 5px;
+    margin-right : 10px;
+  }
+  .menu-title{
+    color : rgb(51, 64, 250);
+    font-weight:lighter;
+  }
+  .unwatch-title,
+  .unstar-title,
+  .fork-title{
+    font-size : 14px;
+  }
+  .unwatch-wrap,
+  .unstar-wrap,
+  .fork-wrap{
+    padding : 3px 5px;
+    margin-right : 10px;
+    color : #00000080;
+    border : 1px solid #5f5f5f80;
+    border-radius: 5px;
+  }
+  .unwatch-wrap:hover,
+  .unstar-wrap:hover,
+  .fork-wrap:hover{
+    cursor: pointer;
+    background-color: #bdbdbd;
+  }
+  .menu-bar-wrap{
+    width : 1100px;
+    margin-left : 50px;
+  }
+  .bottom-menu{
+    justify-content: space-between;
+    border-bottom: 1px solid #5f5f5f80;
+  }
+  .menu-bar-wrap,
+  .code-wrap,
+  .issue-wrap,
+  .pr-wrap,
+  .action-wrap,
+  .project-wrap{
+    color : #0e0e0e80;
+    margin-right : 15px;
+    margin-left : 15px;
+    padding-bottom:10px;
+  }
+  .code-title,
+  .issue-title,
+  .pr-title,
+  .action-title,
+  .project-title{
+    margin-left : 5px;
+  }
+  .more-menu{
+    display: block;
+    color : #5f5f5f80;
+    margin-right : 50px;
+  }
+  .more-menu:hover{
+    cursor:pointer;
+  }
+  .setting-wrap,
+  .insight-wrap,
+  .security-wrap,
+  .wiki-wrap,
+  .project-wrap{
+    display:none;
+  }
+  .code-wrap:hover,
+  .issue-wrap:hover,
+  .pr-wrap:hover,
+  .action-wrap:hover,
+  .project-wrap:hover,
+  .wiki-wrap:hover,
+  .security-wrap:hover,
+  .insight-wrap:hover,
+  .setting-wrap:hover{
+    cursor: pointer;
+    margin-bottom : -10px;
+    border-bottom: 2px solid black;
+  }
+}
+@media (max-width:599px) and (min-width:490px)
+{
+  .menu-title-wrap,
+  .menu-left-wrap,
+  .menu-right-wrap,
+  .unwatch-wrap,
+  .unstar-wrap,
+  .fork-wrap,
+  .menu-bar-wrap,
+  .code-wrap,
+  .issue-wrap,
+  .pr-wrap,
+  .action-wrap,
+  .project-wrap,
+  .bottom-menu{
+    display:flex;
+  }
+  .menu-title-wrap{
+    justify-content: space-between;
+    margin : 20px;
+    margin-bottom:25px;
+  }
+  .menu-title,
+  .unwatch-title,
+  .unstar-title,
+  .fork-title{
+    margin-left : 5px;
+    margin-right : 10px;
+  }
+  .menu-title{
+    color : rgb(51, 64, 250);
+    font-weight:lighter;
+  }
+  .unwatch-title,
+  .unstar-title,
+  .fork-title{
+    font-size : 14px;
+  }
+  .unwatch-wrap,
+  .unstar-wrap,
+  .fork-wrap{
+    padding : 3px 5px;
+    margin-right : 10px;
+    color : #00000080;
+    border : 1px solid #5f5f5f80;
+    border-radius: 5px;
+  }
+  .menu-bar-wrap{
+    width : 1100px;
+    margin-left : 50px;
+  }
+  .bottom-menu{
+    justify-content: space-between;
+    border-bottom: 1px solid #5f5f5f80;
+  }
+  .menu-bar-wrap,
+  .code-wrap,
+  .issue-wrap,
+  .pr-wrap,
+  .action-wrap,
+  .project-wrap{
+    color : #0e0e0e80;
+    margin-right : 15px;
+    margin-left : 15px;
+    padding-bottom:10px;
+  }
+  .code-title,
+  .issue-title,
+  .pr-title,
+  .action-title,
+  .project-title{
+    margin-left : 5px;
+  }
+  .more-menu{
+    display: block;
+    color : #5f5f5f80;
+    margin-right : 50px;
+  }
+  .more-menu:hover{
+    cursor:pointer;
+  }
+  .setting-wrap,
+  .insight-wrap,
+  .security-wrap,
+  .wiki-wrap,
+  .project-wrap,
+  .action-wrap,
+  .menu-right-wrap{
+    display:none;
+  }
+  .code-wrap:hover,
+  .issue-wrap:hover,
+  .pr-wrap:hover,
+  .action-wrap:hover,
+  .project-wrap:hover,
+  .wiki-wrap:hover,
+  .security-wrap:hover,
+  .insight-wrap:hover,
+  .setting-wrap:hover{
+    cursor: pointer;
+    margin-bottom : -10px;
+    border-bottom: 2px solid black;
+  }
+}
+@media (max-width:489px)
+{
+  .menu-title-wrap,
+  .menu-left-wrap,
+  .menu-right-wrap,
+  .unwatch-wrap,
+  .unstar-wrap,
+  .fork-wrap,
+  .menu-bar-wrap,
+  .code-wrap,
+  .issue-wrap,
+  .pr-wrap,
+  .action-wrap,
+  .project-wrap,
+  .bottom-menu{
+    display:flex;
+  }
+  .menu-title-wrap{
+    justify-content: space-between;
+    margin : 20px;
+    margin-bottom:25px;
+  }
+  .menu-title,
+  .unwatch-title,
+  .unstar-title,
+  .fork-title{
+    margin-left : 5px;
+    margin-right : 10px;
+  }
+  .menu-title{
+    color : rgb(51, 64, 250);
+    font-weight:lighter;
+  }
+  .unwatch-title,
+  .unstar-title,
+  .fork-title{
+    font-size : 14px;
+  }
+  .unwatch-wrap,
+  .unstar-wrap,
+  .fork-wrap{
+    padding : 3px 5px;
+    margin-right : 10px;
+    color : #00000080;
+    border : 1px solid #5f5f5f80;
+    border-radius: 5px;
+  }
+  .menu-bar-wrap{
+    width : 1100px;
+    margin-left : 50px;
+  }
+  .bottom-menu{
+    justify-content: space-between;
+    border-bottom: 1px solid #5f5f5f80;
+  }
+  .menu-bar-wrap,
+  .code-wrap,
+  .issue-wrap,
+  .pr-wrap,
+  .action-wrap,
+  .project-wrap{
+    color : #0e0e0e80;
+    margin-right : 15px;
+    margin-left : 15px;
+    padding-bottom:10px;
+  }
+  .code-title,
+  .issue-title,
+  .pr-title,
+  .action-title,
+  .project-title{
+    margin-left : 5px;
+  }
+  .more-menu{
+    display: block;
+    color : #5f5f5f80;
+    margin-right : 50px;
+  }
+  .more-menu:hover{
+    cursor:pointer;
+  }
+  .setting-wrap,
+  .insight-wrap,
+  .security-wrap,
+  .wiki-wrap,
+  .project-wrap,
+  .action-wrap,
+  .menu-right-wrap,
+  .pr-wrap{
+    display:none;
+  }
+  .code-wrap:hover,
+  .issue-wrap:hover,
+  .pr-wrap:hover,
+  .action-wrap:hover,
+  .project-wrap:hover,
+  .wiki-wrap:hover,
+  .security-wrap:hover,
+  .insight-wrap:hover,
+  .setting-wrap:hover{
+    cursor: pointer;
+    margin-bottom : -10px;
+    border-bottom: 2px solid black;
+  }
+}
+
 /* 컬럼 */
 .column-container {
   width: 350px;
@@ -572,7 +1438,6 @@
   margin-bottom: 10px;
   text-align: center;
   padding-top: 15px;
-  /* vertical-align: middle; */
 }
 .detail-foot:hover {
   cursor: pointer;
