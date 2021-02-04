@@ -4,6 +4,7 @@ import Modal from './Modal/index.js';
 import Column from './Column/index.js';
 import Card from './Card/index.js';
 import CardDetail from './CardDetail/index.js';
+import MenuBar from './MenuBar/index.js';
 import { getContainer } from './common.js';
 import { show, hidden } from '../lib/modalTrigger.js';
 import { getCardDatas, getColumnDatas } from '../lib/getDatas.js';
@@ -17,7 +18,7 @@ const AddColumnOnClickEvent = (AddColumnEle) => {
   AddColumnEle.addEventListener('click', AddColumnOnClick);
 };
 
-const initializeDatas = async (BodyWrap) => {
+const initializeDatas = async (BodyWrap, Detail) => {
   const columnDatas = await getColumnDatas();
   columnDatas
     .sort((a, b) => {
@@ -26,16 +27,16 @@ const initializeDatas = async (BodyWrap) => {
     .forEach(async (element) => {
       const cardDatas = await getCardDatas();
       const cardCnt = cardDatas.filter((card) => element.column_id === card.column_id).length;
-      const newColumn = Column(element.title, element.column_id, cardCnt);
+      const newColumn = Column(element.title, element.column_id, cardCnt, Detail);
+      const cnt = newColumn.childNodes[0].childNodes[0].childNodes[0];
       const columnBody = newColumn.lastChild;
       cardDatas
         .filter((card) => element.column_id === card.column_id)
         .forEach((element2) => {
-          const newCard = Card(element2.title, element2.card_id);
+          const newCard = Card(element2.title, element2.card_id, cnt, Detail);
           columnBody.insertAdjacentElement('beforeend', newCard);
         });
 
-      // newColumn = Column(element.title, element.column_id);
       BodyWrap.insertAdjacentElement('beforeend', newColumn);
     });
 };
@@ -51,16 +52,18 @@ const Main = () => {
   const AddColumnEle = AddColumn();
 
   AddColumnOnClickEvent(AddColumnEle);
-
+  const Detail = CardDetail();
   AddWrap.insertAdjacentElement('beforeend', AddColumnEle);
-  initializeDatas(BodyWrap);
+  initializeDatas(BodyWrap, Detail);
   // BodyWrap 컬럼을 넣는다.
   // 컬럼에 카드를 넣는다.
-
   BodyContainer.insertAdjacentElement('beforeend', BodyWrap);
   BodyContainer.insertAdjacentElement('beforeend', AddWrap);
-  BodyContainer.insertAdjacentElement('beforeend', CardDetail());
+  BodyContainer.insertAdjacentElement('beforeend', Detail);
   MainContainer.insertAdjacentElement('beforeend', Header());
+  // 잠시
+  MainContainer.insertAdjacentElement('beforeend', MenuBar());
+
   MainContainer.insertAdjacentElement('beforeend', BodyContainer);
   MainContainer.insertAdjacentElement('beforeend', Modal(BodyWrap));
 
