@@ -20,7 +20,9 @@ const MenuBar = () => {
   const ForkIcon = getBtn(null, 'fas fa-code-branch', null);
   const ForkTitle = getContainer(null, 'fork-title', 'Fork');
 
+  const BottomMenu= getContainer(null,'bottom-menu',null);
   const MenuBarWrap = getContainer(null, 'menu-bar-wrap', null);
+  const MoreMenu = getContainer(null,'more-menu','···')
 
   const CodeWrap = getContainer(null, 'code-wrap', null);
   const CodeIcon = getBtn('code-icon', 'fas fa-code', null);
@@ -104,7 +106,10 @@ const MenuBar = () => {
   MenuBarWrap.insertAdjacentElement('beforeend', InsightsWrap);
   MenuBarWrap.insertAdjacentElement('beforeend', SettingsWrap);
 
-  MainContainer.insertAdjacentElement('beforeend', MenuBarWrap);
+  BottomMenu.insertAdjacentElement('beforeend', MenuBarWrap);
+  BottomMenu.insertAdjacentElement('beforeend', MoreMenu);
+
+  MainContainer.insertAdjacentElement('beforeend', BottomMenu);
 
   return MainContainer;
 };
