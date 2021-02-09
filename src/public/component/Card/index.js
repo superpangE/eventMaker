@@ -17,14 +17,24 @@ const DeleteCardClickEvent = (DeleteCardContainer, CardContainer, cardId, cardCn
   };
   DeleteCardContainer.addEventListener('click', DeleteCardClick);
 };
-const TitleOnclickEvent = (CardTitle, Detail) => {
+const TitleOnclickEvent = (CardTitle, Detail, Content, Author) => {
   const TitleOnclick = () => {
+    console.log(CardTitle);
+    console.log(Detail);
+    console.log(Content);
+    console.log(Author);
+
     Detail.classList.add('detail-container-block');
+    // Detail.classList.remove('detail-container-nonblock');
+    // Detail.classList.add('fade-in');
+    document.querySelector('.detail-title').innerHTML = CardTitle.innerHTML;
+    document.querySelector('.author-name').innerHTML = Author;
+    document.querySelector('.detail-content').innerHTML = Content;
   };
   CardTitle.addEventListener('click', TitleOnclick);
 };
 
-const Card = (TitleValue, cardId, cardCnt, Detail) => {
+const Card = (TitleValue, cardId, cardCnt, Detail, Content, Author) => {
   const CardContainer = getContainer(null, 'card-container', null);
 
   const CardHeader = getContainer(null, 'card-header', null);
@@ -48,7 +58,7 @@ const Card = (TitleValue, cardId, cardCnt, Detail) => {
   DeleteCardContainer.insertAdjacentElement('beforeend', DeleteCard);
   CardHeader.insertAdjacentElement('beforeend', DeleteCardContainer);
 
-  TitleOnclickEvent(CardTitle, Detail);
+  TitleOnclickEvent(CardTitle, Detail, Content, Author);
   DeleteCardClickEvent(DeleteCardContainer, CardContainer, cardId, cardCnt);
 
   ProgressWrap.insertAdjacentElement('beforeend', ProgressIcon);

@@ -120,7 +120,7 @@
 }
 
 /* 메뉴 바 */
-@media (min-width: 1150px) {
+@media (min-width: 1100px) {
   .menu-title-wrap,
   .menu-left-wrap,
   .menu-right-wrap,
@@ -227,7 +227,7 @@
     border-bottom: 2px solid black;
   }
 }
-@media (max-width: 1149px) and (min-width: 1055px) {
+@media (max-width: 1099px) and (min-width: 1055px) {
   .menu-title-wrap,
   .menu-left-wrap,
   .menu-right-wrap,
@@ -1315,6 +1315,22 @@
   color: #797979;
 }
 /* 카드 세부 컴포넌트 */
+@keyframes slidein {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 320px;
+  }
+}
+@keyframes slideout {
+  from {
+    width: 320px;
+  }
+  to {
+    width: 0px;
+  }
+}
 .detail-container {
   display: none;
   position: fixed;
@@ -1325,6 +1341,13 @@
   background-color: white;
 }
 .detail-container-block {
+  animation-duration: 1s;
+  animation-name: slidein;
+  display: block;
+}
+.detail-container-nonblock {
+  animation-duration: 1s;
+  animation-name: slideout;
   display: block;
 }
 .header-left {
@@ -1389,6 +1412,7 @@
   height: 200px;
   border-top: 1px solid #7b7b7c80;
   border-bottom: 1px solid #7b7b7c80;
+  padding: 15px;
 }
 .assignees-wrap,
 .labels-wrap,
@@ -1425,7 +1449,7 @@
   position: fixed;
   border-radius: 10px;
   bottom: 0;
-  width: 200px;
+  width: 280px;
   margin-left: 20px;
   margin-bottom: 10px;
   text-align: center;
