@@ -33,7 +33,14 @@ const initializeDatas = async (BodyWrap, Detail) => {
       cardDatas
         .filter((card) => element.column_id === card.column_id)
         .forEach((element2) => {
-          const newCard = Card(element2.title, element2.card_id, cnt, Detail);
+          const newCard = Card(
+            element2.title,
+            element2.card_id,
+            cnt,
+            Detail,
+            element2.content,
+            element2.author
+          );
           columnBody.insertAdjacentElement('beforeend', newCard);
         });
 
@@ -55,6 +62,7 @@ const Main = () => {
   const Detail = CardDetail();
   AddWrap.insertAdjacentElement('beforeend', AddColumnEle);
   initializeDatas(BodyWrap, Detail);
+  // console.log(initializeDatas(BodyWrap, Detail));
   // BodyWrap 컬럼을 넣는다.
   // 컬럼에 카드를 넣는다.
   BodyContainer.insertAdjacentElement('beforeend', BodyWrap);

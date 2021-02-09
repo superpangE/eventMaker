@@ -8,7 +8,8 @@ const AcceptBtnOnClickEvent = (
   AddCardTitleArea,
   AddCardContentArea,
   columnId,
-  cardCnt
+  cardCnt,
+  Detail
 ) => {
   const AcceptBtnonClick = async () => {
     const TitleValue = AddCardTitleArea.value;
@@ -24,7 +25,7 @@ const AcceptBtnOnClickEvent = (
         content: ContentValue,
       });
       const cardId = Result.cardId;
-      const NewCard = Card(TitleValue, cardId, cardCnt);
+      const NewCard = Card(TitleValue, cardId, cardCnt, Detail, ContentValue, 'anonymous');
       ColumnBody.insertAdjacentElement('beforeend', NewCard);
       ColumnBody.removeChild(ColumnBody.firstChild);
       const abc = Number(cardCnt.textContent);
@@ -43,7 +44,7 @@ const DeleteBtnOnClickEvent = (CancelWrap, ColumnBody) => {
   CancelWrap.addEventListener('click', DeleteBtnOnClick);
 };
 
-const AddCard = (ColumnBody, columnId, cardCnt) => {
+const AddCard = (ColumnBody, columnId, cardCnt, Detail) => {
   const Container = getContainer(null, 'addcard-container', null);
   const AddCardTitle = getContainer(null, 'addcard-title', 'title');
   const AddCardTitleArea = getInput(null, 'addcard-title-area', null, 'addtitle');
@@ -65,7 +66,8 @@ const AddCard = (ColumnBody, columnId, cardCnt) => {
     AddCardTitleArea,
     AddCardContentArea,
     columnId,
-    cardCnt
+    cardCnt,
+    Detail
   );
   DeleteBtnOnClickEvent(CancelWrap, ColumnBody);
 

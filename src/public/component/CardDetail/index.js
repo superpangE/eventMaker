@@ -1,7 +1,11 @@
 import { getContainer, getBtn } from '../common.js';
 const CloseOnclickEvent = (HeaderClose, MainContainer) => {
   const CloseOnclick = () => {
-    MainContainer.classList.remove('detail-container-block');
+    MainContainer.classList.add('detail-container-nonblock');
+    setTimeout(function () {
+      MainContainer.classList.remove('detail-container-block');
+      MainContainer.classList.remove('detail-container-nonblock');
+    }, 1000);
   };
   HeaderClose.addEventListener('click', CloseOnclick);
 };
@@ -24,7 +28,7 @@ const CardDetail = () => {
   const AuthorSetWrap = getContainer(null, 'author-set-wrap', null);
   const AuthorEmo = getBtn('author-emo', 'far fa-smile', null);
   const AuthorEdit = getBtn('author-edit', 'fas fa-pencil-alt', null);
-  const AuthorName = getContainer(null, 'author-name', 'hypering');
+  const AuthorName = getContainer(null, 'author-name', 'Anonymous');
   const AuthorDate = getContainer(null, 'author-date', '2021/02/02');
 
   const AssigneesWrap = getContainer(null, 'assignees-wrap', null);
