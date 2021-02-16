@@ -1,8 +1,9 @@
-const getContainer = (id, className, text) => {
+const getContainer = (id, className, text, drag) => {
   const container = document.createElement('div');
   if (className !== null) container.className = className;
   if (id !== null) container.id = id;
   if (text !== null) container.textContent = text;
+  if (drag !== null) container.draggable = drag;
   return container;
 };
 
