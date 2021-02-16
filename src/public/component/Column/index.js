@@ -2,6 +2,19 @@ import { getContainer, getBtn } from '../common.js';
 // import Card from '../Card/index.js';
 import AddCard from '../AddCard/index.js';
 
+const DragColumnEvent = (Column) => {
+  const DragColumn = () => {
+    Column.classList.add('drag-on');
+  };
+  Column.addEventListener('drag', DragColumn);
+};
+const DragEndEvent = (Column) => {
+  const DragEnd = () => {
+    Column.classList.remove('drag-on');
+  };
+  Column.addEventListener('dragend', DragEnd);
+};
+
 const AddCardOnClickEvent = (MakeCardWrap, ColumnBody, columnId, cardCnt, Detail) => {
   const AddCardOnClick = () => {
     if (!ColumnBody.firstChild || !ColumnBody.firstChild.classList.contains('addcard-container')) {
@@ -36,7 +49,9 @@ const Column = (title, columnId, cardCnt, Detail) => {
   //   target.classList.add('column-container-selected');
   // };
 
-  const ColumnContainer = getContainer(null, 'column-container', null);
+  const ColumnContainer = getContainer(null, 'column-container', null, true);
+  DragColumnEvent(ColumnContainer);
+  DragEndEvent(ColumnContainer);
   // ColumnContainer.addEventListener('click', onClick);
   const ColumnHeader = getContainer(null, 'column-header', null);
 

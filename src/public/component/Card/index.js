@@ -1,5 +1,31 @@
 import { getContainer, getBtn } from '../common.js';
 
+const CardDragEvent = (Card) => {
+  const CardDrag = (e) => {
+    Card.classList.add('drag-on');
+    e.stopPropagation();
+  };
+  Card.addEventListener('drag', CardDrag);
+};
+const DragEndEvent = (Card) => {
+  const DragEnd = (e) => {
+    Card.classList.remove('drag-on');
+    const { clientX, clientY } = e;
+    const elem = document.elementFromPoint(clientX, clientY);
+    const origin = elem.closest('.column-container');
+
+    // console.log(origin);
+    if (!origin) return;
+    else {
+      const push = origin.children[1];
+      push.insertAdjacentElement('beforeend', Card);
+    }
+
+    e.stopPropagation();
+  };
+  Card.addEventListener('dragend', DragEnd);
+};
+
 const DeleteCardClickEvent = (DeleteCardContainer, CardContainer, cardId, cardCnt) => {
   const DeleteCardClick = async () => {
     CardContainer.remove();
@@ -19,14 +45,7 @@ const DeleteCardClickEvent = (DeleteCardContainer, CardContainer, cardId, cardCn
 };
 const TitleOnclickEvent = (CardTitle, Detail, Content, Author) => {
   const TitleOnclick = () => {
-    console.log(CardTitle);
-    console.log(Detail);
-    console.log(Content);
-    console.log(Author);
-
     Detail.classList.add('detail-container-block');
-    // Detail.classList.remove('detail-container-nonblock');
-    // Detail.classList.add('fade-in');
     document.querySelector('.detail-title').innerHTML = CardTitle.innerHTML;
     document.querySelector('.author-name').innerHTML = Author;
     document.querySelector('.detail-content').innerHTML = Content;
@@ -35,8 +54,9 @@ const TitleOnclickEvent = (CardTitle, Detail, Content, Author) => {
 };
 
 const Card = (TitleValue, cardId, cardCnt, Detail, Content, Author) => {
-  const CardContainer = getContainer(null, 'card-container', null);
-
+  const CardContainer = getContainer(null, 'card-container', null, true);
+  CardDragEvent(CardContainer);
+  DragEndEvent(CardContainer);
   const CardHeader = getContainer(null, 'card-header', null);
   const CardTitleWrap = getContainer(null, 'card-title-wrap', null);
   const CardIcon = getBtn('card-icon', 'fas fa-exclamation-circle', null);
