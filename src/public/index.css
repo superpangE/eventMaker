@@ -976,7 +976,10 @@
     border-bottom: 2px solid black;
   }
 }
-
+/* 드래그 앤 드롭 이벤트 */
+.drag-on {
+  opacity: 70%;
+}
 /* 컬럼 */
 .column-container {
   width: 350px;
@@ -987,6 +990,7 @@
   border: 1px solid #d1d5da80;
   border-radius: 10px;
   margin-right: 10px;
+  overflow: auto;
 }
 
 .column-container-selected {
@@ -1091,7 +1095,7 @@
   border: 1px solid #d1d5da80;
   border-radius: 10px;
   padding: 5px 10px;
-  margin: 5px;
+  margin: 5px 0 5px 5px;
 }
 .card-header {
   font-weight: 600;
