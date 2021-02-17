@@ -978,7 +978,7 @@
 }
 /* 드래그 앤 드롭 이벤트 */
 .drag-on {
-  opacity: 70%;
+  opacity: 40%;
 }
 /* 컬럼 */
 .column-container {
@@ -1095,7 +1095,9 @@
   border: 1px solid #d1d5da80;
   border-radius: 10px;
   padding: 5px 10px;
-  margin: 5px 0 5px 5px;
+}
+.card-padding {
+  padding-bottom: 10px;
 }
 .card-header {
   font-weight: 600;
@@ -1321,18 +1323,20 @@
 /* 카드 세부 컴포넌트 */
 @keyframes slidein {
   from {
-    width: 0%;
+    /* width: 0%; */
+    right: -320px;
   }
   to {
-    width: 320px;
+    /* width: 320px; */
+    right: 0;
   }
 }
 @keyframes slideout {
   from {
-    width: 320px;
+    right: 0;
   }
   to {
-    width: 0px;
+    right: -320px;
   }
 }
 .detail-container {
