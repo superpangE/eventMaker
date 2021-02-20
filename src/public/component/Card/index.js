@@ -89,7 +89,7 @@ const Card = (TitleValue, cardId, cardCnt, Detail, Content, Author) => {
   CardHeader.insertAdjacentElement('beforeend', DeleteCardContainer);
 
   TitleOnclickEvent(CardTitle, Detail, Content, Author);
-  DeleteCardClickEvent(DeleteCardContainer, CardContainer, cardId, cardCnt);
+  DeleteCardClickEvent(DeleteCardContainer, CardPadding, cardId, cardCnt);
 
   ProgressWrap.insertAdjacentElement('beforeend', ProgressIcon);
   ProgressWrap.insertAdjacentElement('beforeend', ProgressCnt);
