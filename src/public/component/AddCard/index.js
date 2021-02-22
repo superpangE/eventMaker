@@ -29,7 +29,15 @@ const AcceptBtnOnClickEvent = (
         content: ContentValue,
       });
       const cardId = Result.cardId;
-      const NewCard = Card(TitleValue, cardId, cardCnt, Detail, ContentValue, 'anonymous');
+      const NewCard = Card(
+        TitleValue,
+        cardId,
+        cardCnt,
+        Detail,
+        ContentValue,
+        'anonymous',
+        posNum.result[0].num + 1
+      );
       ColumnBody.insertAdjacentElement('beforeend', NewCard);
       ColumnBody.removeChild(ColumnBody.firstChild);
       const abc = Number(cardCnt.textContent);

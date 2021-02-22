@@ -50,6 +50,7 @@ const Column = (title, columnId, cardCnt, Detail) => {
   // };
 
   const ColumnContainer = getContainer(null, 'column-container', null, true);
+  ColumnContainer.dataset.value = columnId;
   DragColumnEvent(ColumnContainer);
   DragEndEvent(ColumnContainer);
   // ColumnContainer.addEventListener('click', onClick);

@@ -1,5 +1,5 @@
 import { getContainer, getBtn } from '../common.js';
-
+import API from '../../lib/api.js';
 const CardDragEvent = (Card) => {
   const CardDrag = (e) => {
     Card.classList.add('drag-on');
@@ -27,8 +27,36 @@ const CardDragEvent = (Card) => {
   };
   Card.addEventListener('drag', CardDrag);
 };
-const DragEndEvent = (Card) => {
-  const DragEnd = (e) => {
+const DragEndEvent = async (Card) => {
+  const DragEnd = async (e) => {
+    const { clientX, clientY } = e;
+    const elem = document.elementFromPoint(clientX, clientY);
+    const origin = elem.closest('.column-container');
+    const check = elem.closest('.card-padding');
+    const column_id = origin.getAttribute('data-value');
+    const card_id = check.getAttribute('data-value');
+
+    let pos;
+    if (!Card.previousSibling && !Card.nextSibling) {
+      pos = 1;
+    } else if (!Card.nextSibling) {
+      pos = Number(Card.previousSibling.getAttribute('data-pos')) + 1;
+    } else if (!Card.previousSibling) {
+      pos = Number(Card.nextSibling.getAttribute('data-pos')) - 1;
+    } else {
+      pos =
+        (Number(Card.previousSibling.getAttribute('data-pos')) +
+          Number(Card.nextSibling.getAttribute('data-pos'))) /
+        2;
+    }
+    Card.setAttribute('data-pos', pos);
+
+    await API.post('/card/update/move', {
+      pos: pos,
+      cardId: card_id,
+      columnId: column_id,
+    });
+
     Card.classList.remove('drag-on');
     e.stopPropagation();
   };
@@ -62,8 +90,10 @@ const TitleOnclickEvent = (CardTitle, Detail, Content, Author) => {
   CardTitle.addEventListener('click', TitleOnclick);
 };
 
-const Card = (TitleValue, cardId, cardCnt, Detail, Content, Author) => {
+const Card = (TitleValue, cardId, cardCnt, Detail, Content, Author, Pos) => {
   const CardPadding = getContainer(null, 'card-padding', null, true);
+  CardPadding.dataset.value = cardId;
+  CardPadding.dataset.pos = Pos;
   const CardContainer = getContainer(null, 'card-container', null, true);
   CardDragEvent(CardPadding);
   DragEndEvent(CardPadding);
@@ -100,7 +130,6 @@ const Card = (TitleValue, cardId, cardCnt, Detail, Content, Author) => {
   CardContainer.insertAdjacentElement('beforeend', CardAuthor);
 
   CardPadding.insertAdjacentElement('beforeend', CardContainer);
-  //   CardContainer.insertAdjacentElement('beforeend', CardTag);
 
   return CardPadding;
 };
