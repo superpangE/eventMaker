@@ -19,7 +19,6 @@ router.get('/findAll', (req, res) => {
 router.post('/add', (req, res) => {
   const { columnId, title, pos, content, author } = req.body;
   const params = [columnId, title, pos, content, author];
-
   const sql =
     'INSERT INTO eventmaker.Card(column_id, title, pos, content, author) VALUE(?, ?, ?, ?, ?)';
   connection.query(sql, params, (err, rows) => {
@@ -53,6 +52,17 @@ router.get('/counter', (req, res) => {
   });
 });
 
+router.post('/getlast', (req, res) => {
+  const { columnId } = req.body;
+  const sql = `select max(pos) as num from eventmaker.Card where column_id = ${columnId}`;
+  connection.query(sql, (err, result) => {
+    if (err) console.log(err);
+    res.json({
+      result,
+    });
+  });
+});
+
 router.post('/update/title', (req, res) => {
   const { cardId, title } = req.body;
   const params = [cardId, title];
@@ -65,10 +75,10 @@ router.post('/update/title', (req, res) => {
   });
 });
 
-router.post('update/pos', (req, res) => {
-  const { cardId, pos } = req.body;
-  const params = [cardId, pos];
-  const sql = 'UPDATE eventmaker.Card SET pos = ? WHERE card_id=?';
+router.post('/update/move', (req, res) => {
+  const { cardId, columnId, pos } = req.body;
+  const params = [pos, columnId, cardId];
+  const sql = 'UPDATE eventmaker.Card SET pos = ?, column_id = ? WHERE card_id=?';
   connection.query(sql, params, (err, rows) => {
     if (err) console.log(err);
     res.json({
