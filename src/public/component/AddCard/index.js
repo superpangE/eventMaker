@@ -20,7 +20,6 @@ const AcceptBtnOnClickEvent = (
       const posNum = await API.post('/card/getlast', {
         columnId,
       });
-      // console.log(posNum.result[0].num);
       const Result = await API.post('/card/add', {
         columnId,
         title: TitleValue,
@@ -57,7 +56,6 @@ const DeleteBtnOnClickEvent = (CancelWrap, ColumnBody) => {
 };
 
 const AddCard = (ColumnBody, columnId, cardCnt, Detail) => {
-  console.log(Number(cardCnt.innerHTML));
   const Container = getContainer(null, 'addcard-container', null);
   const AddCardTitle = getContainer(null, 'addcard-title', 'title');
   const AddCardTitleArea = getInput(null, 'addcard-title-area', null, 'addtitle');

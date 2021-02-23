@@ -27,14 +27,12 @@ const CardDragEvent = (Card) => {
   };
   Card.addEventListener('drag', CardDrag);
 };
-const DragEndEvent = async (Card) => {
+const DragEndEvent = async (Card, cardId) => {
   const DragEnd = async (e) => {
     const { clientX, clientY } = e;
     const elem = document.elementFromPoint(clientX, clientY);
     const origin = elem.closest('.column-container');
-    const check = elem.closest('.card-padding');
     const column_id = origin.getAttribute('data-value');
-    const card_id = check.getAttribute('data-value');
 
     let pos;
     if (!Card.previousSibling && !Card.nextSibling) {
@@ -53,7 +51,7 @@ const DragEndEvent = async (Card) => {
 
     await API.post('/card/update/move', {
       pos: pos,
-      cardId: card_id,
+      cardId: cardId,
       columnId: column_id,
     });
 
@@ -96,7 +94,7 @@ const Card = (TitleValue, cardId, cardCnt, Detail, Content, Author, Pos) => {
   CardPadding.dataset.pos = Pos;
   const CardContainer = getContainer(null, 'card-container', null, true);
   CardDragEvent(CardPadding);
-  DragEndEvent(CardPadding);
+  DragEndEvent(CardPadding, cardId);
   const CardHeader = getContainer(null, 'card-header', null);
   const CardTitleWrap = getContainer(null, 'card-title-wrap', null);
   const CardIcon = getBtn('card-icon', 'fas fa-exclamation-circle', null);

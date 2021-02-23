@@ -1,5 +1,4 @@
 import { getContainer, getBtn } from '../common.js';
-// import Card from '../Card/index.js';
 import AddCard from '../AddCard/index.js';
 
 const DragColumnEvent = (Column) => {
@@ -44,16 +43,10 @@ const DeleteColumnClickEvent = (DeleteCardWrap, ColumnContainer, columnId) => {
 };
 
 const Column = (title, columnId, cardCnt, Detail) => {
-  // const onClick = (e) => {
-  //   const target = e.target.closest('.column-container');
-  //   target.classList.add('column-container-selected');
-  // };
-
   const ColumnContainer = getContainer(null, 'column-container', null, true);
   ColumnContainer.dataset.value = columnId;
   DragColumnEvent(ColumnContainer);
   DragEndEvent(ColumnContainer);
-  // ColumnContainer.addEventListener('click', onClick);
   const ColumnHeader = getContainer(null, 'column-header', null);
 
   const ColumnHeaderWrap = getContainer(null, 'column-header-wrap', null);
@@ -74,8 +67,6 @@ const Column = (title, columnId, cardCnt, Detail) => {
   ColumnMaker.insertAdjacentElement('beforeend', MakeCardWrap);
   ColumnMaker.insertAdjacentElement('beforeend', DeleteCardWrap);
 
-  // MakeColumn.addEventListener('click', AddCardOnClickEvent(ColumnBody));
-
   ColumnHeaderWrap.insertAdjacentElement('beforeend', ColumnHeaderCounter);
   ColumnHeaderWrap.insertAdjacentElement('beforeend', ColumnHeaderTitle);
 
@@ -84,11 +75,6 @@ const Column = (title, columnId, cardCnt, Detail) => {
 
   AddCardOnClickEvent(MakeCardWrap, ColumnBody, columnId, ColumnHeaderCounter, Detail);
   DeleteColumnClickEvent(DeleteCardWrap, ColumnContainer, columnId);
-  // AddCard(ColumnBody);
-  // ColumnBody.insertAdjacentElement('beforeend', AddCard(ColumnBody));
-  // ColumnBody.insertAdjacentElement('beforeend', AddCard());
-  // ColumnBody.insertAdjacentElement('beforeend', Card());
-
   ColumnContainer.insertAdjacentElement('beforeend', ColumnHeader);
   ColumnContainer.insertAdjacentElement('beforeend', ColumnBody);
 
