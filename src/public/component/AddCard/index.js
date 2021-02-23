@@ -17,15 +17,27 @@ const AcceptBtnOnClickEvent = (
     AddCardTitleArea.value = '';
     AddCardContentArea.value = '';
     if (TitleValue !== '' && ContentValue !== '') {
+      const posNum = await API.post('/card/getlast', {
+        columnId,
+      });
+      // console.log(posNum.result[0].num);
       const Result = await API.post('/card/add', {
         columnId,
         title: TitleValue,
         author: 'anonymous',
-        pos: columnId,
+        pos: posNum.result[0].num + 1,
         content: ContentValue,
       });
       const cardId = Result.cardId;
-      const NewCard = Card(TitleValue, cardId, cardCnt, Detail, ContentValue, 'anonymous');
+      const NewCard = Card(
+        TitleValue,
+        cardId,
+        cardCnt,
+        Detail,
+        ContentValue,
+        'anonymous',
+        posNum.result[0].num + 1
+      );
       ColumnBody.insertAdjacentElement('beforeend', NewCard);
       ColumnBody.removeChild(ColumnBody.firstChild);
       const abc = Number(cardCnt.textContent);
@@ -45,6 +57,7 @@ const DeleteBtnOnClickEvent = (CancelWrap, ColumnBody) => {
 };
 
 const AddCard = (ColumnBody, columnId, cardCnt, Detail) => {
+  console.log(Number(cardCnt.innerHTML));
   const Container = getContainer(null, 'addcard-container', null);
   const AddCardTitle = getContainer(null, 'addcard-title', 'title');
   const AddCardTitleArea = getInput(null, 'addcard-title-area', null, 'addtitle');

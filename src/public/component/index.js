@@ -32,6 +32,9 @@ const initializeDatas = async (BodyWrap, Detail) => {
       const columnBody = newColumn.lastChild;
       cardDatas
         .filter((card) => element.column_id === card.column_id)
+        .sort((a, b) => {
+          return a.pos < b.pos ? -1 : 0;
+        })
         .forEach((element2) => {
           const newCard = Card(
             element2.title,
@@ -39,7 +42,8 @@ const initializeDatas = async (BodyWrap, Detail) => {
             cnt,
             Detail,
             element2.content,
-            element2.author
+            element2.author,
+            element2.pos
           );
           columnBody.insertAdjacentElement('beforeend', newCard);
         });
@@ -54,29 +58,24 @@ const Main = () => {
   const AddWrap = getContainer(null, 'add-wrap', null);
   const BodyContainer = getContainer(null, 'body-container', null);
 
-  // const test = getContainer(null, 'test', null);
-
   const AddColumnEle = AddColumn();
 
   AddColumnOnClickEvent(AddColumnEle);
   const Detail = CardDetail();
   AddWrap.insertAdjacentElement('beforeend', AddColumnEle);
   initializeDatas(BodyWrap, Detail);
-  // console.log(initializeDatas(BodyWrap, Detail));
   // BodyWrap 컬럼을 넣는다.
   // 컬럼에 카드를 넣는다.
   BodyContainer.insertAdjacentElement('beforeend', BodyWrap);
   BodyContainer.insertAdjacentElement('beforeend', AddWrap);
   BodyContainer.insertAdjacentElement('beforeend', Detail);
   MainContainer.insertAdjacentElement('beforeend', Header());
-  // 잠시
   MainContainer.insertAdjacentElement('beforeend', MenuBar());
 
   MainContainer.insertAdjacentElement('beforeend', BodyContainer);
   MainContainer.insertAdjacentElement('beforeend', Modal(BodyWrap));
 
   return MainContainer;
-  // return test;
 };
 
 export default Main;
