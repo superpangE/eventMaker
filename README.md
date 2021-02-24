@@ -27,7 +27,7 @@ https://img.shields.io/badge/javascript-ES8-green />
 
 - 카드 생성
 
-![](https://i.imgur.com/UEw1Nzq.gif)
+![](https://i.imgur.com/ybFOrBc.gif)
 
 - 카드 세부 컴포넌트 확인
 
