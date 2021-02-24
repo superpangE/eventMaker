@@ -28,8 +28,6 @@ const addMouseOver = (LeftHeader) => {
 };
 
 const Header = () => {
-  //   const MainContainer = getContainer(null, 'main-container', null);
-
   const HeaderWrap = getContainer(null, 'header-wrap', null);
   const LeftHeader = getContainer(null, 'left-header', null);
   const HeaderIcon = getBtn('header-icon', 'fab fa-github', null);

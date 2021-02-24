@@ -34,7 +34,6 @@ router.post('/delete', (req, res) => {
   const sql = `DELETE FROM eventmaker.Card WHERE card_id = ${cardId}`;
   connection.query(sql, (err, result) => {
     if (err) console.log(err);
-    // console.log(result);
     res.json({
       result,
     });
@@ -63,34 +62,10 @@ router.post('/getlast', (req, res) => {
   });
 });
 
-router.post('/update/title', (req, res) => {
-  const { cardId, title } = req.body;
-  const params = [cardId, title];
-  const sql = 'UPDATE eventmaker.Card SET title = ? WhERE card_id=?';
-  connection.query(sql, params, (err, rows) => {
-    if (err) console.log(err);
-    res.json({
-      rows,
-    });
-  });
-});
-
 router.post('/update/move', (req, res) => {
   const { cardId, columnId, pos } = req.body;
   const params = [pos, columnId, cardId];
   const sql = 'UPDATE eventmaker.Card SET pos = ?, column_id = ? WHERE card_id=?';
-  connection.query(sql, params, (err, rows) => {
-    if (err) console.log(err);
-    res.json({
-      rows,
-    });
-  });
-});
-
-router.post('update/content', (req, res) => {
-  const { cardId, content } = req.body;
-  const params = [cardId, content];
-  const sql = 'UPDATE eventmaker.Card SET content = ? WHERE card_id=?';
   connection.query(sql, params, (err, rows) => {
     if (err) console.log(err);
     res.json({

@@ -181,7 +181,6 @@
   }
   .bottom-menu {
     justify-content: space-between;
-    /* padding-bottom : 15px; */
     border-bottom: 1px solid #5f5f5f80;
   }
   .more-menu {
@@ -287,7 +286,6 @@
   }
   .bottom-menu {
     justify-content: space-between;
-    /* padding-bottom : 15px; */
     border-bottom: 1px solid #5f5f5f80;
   }
   .more-menu {
@@ -1323,11 +1321,9 @@
 /* 카드 세부 컴포넌트 */
 @keyframes slidein {
   from {
-    /* width: 0%; */
     right: -320px;
   }
   to {
-    /* width: 320px; */
     right: 0;
   }
 }
